@@ -17,9 +17,8 @@ Vue.use(IconsPlugin)
 export default {
   name: 'App',
   components: {
-    Main
-  }
-  
+    Main,
+  },
 }
 </script>
 
@@ -29,14 +28,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #666;
   margin-top: 60px;
- 
 }
-
-body{
-    background: aquamarine;
-
-  }
 
 </style>
