@@ -31,7 +31,7 @@ export default {
   margin: 1rem;
 }
 body {
-  font-size: 1.5vh;
+  font-size: 1.8vh;
 }
 
 </style>

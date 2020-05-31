@@ -1,64 +1,56 @@
 <template>
   <div>
     <h1>Balance</h1>
-    <b-button v-b-toggle.collapse-1 variant="outline-primary">
-      <span class="when-opened">
-        <b-icon-caret-up></b-icon-caret-up>
-      </span>
-      <span class="when-closed">
-        <b-icon-caret-down></b-icon-caret-down>
-      </span>
+    <!-- currency balance aggregate -->
+    <div class="container">
+      <!-- accounts list  -->
+      <b-button v-b-toggle.collapse-1 variant="outline-primary">
+        <span class="when-opened">
+          <b-icon-caret-up></b-icon-caret-up>
+        </span>
+        <span class="when-closed">
+          <b-icon-caret-down></b-icon-caret-down>
+        </span>
 
-      GBP 1,346.57
-    </b-button>
+        GBP 1,346.57
+      </b-button>
 
-    <b-collapse id="collapse-1" class="mt-2">
-        <!-- grid account -->
+      <!-- grid accounts collapse/expand -->
+      <b-collapse id="collapse-1" class="mt-2 accounts-collapse">
         <div class="grid-container">
-          <div class="item1">HSBC</div>
-          <div class="item2">12345675</div>
-          <div class="item3">HSBC A1</div>
-          <div class="item4">current account</div>
-          <div class="item5">GBP</div>
-          <div class="item6">86.57</div>
+          <div class="grid-item1">HSBC A1</div>
+          <div class="grid-item2">current account</div>
+          <div class="grid-item3">GBP</div>
+          <div class="grid_item_amount">86.57</div>
+          <div class="grid-item9">
+            <b-icon-gear-fill v-b-toggle.collapse-1-inner class="gear" />
+          </div>
+          <b-collapse id="collapse-1-inner">
+            <div class="grid_item_main_balance_check_button1">
+              <b-form-checkbox
+                v-model="main_balance_check_button1"
+                name="main_balance_check_button1"
+                switch size="sm"
+              >
+                show in main balance
+              </b-form-checkbox>
+            </div>
+            <div class="grid_item_expenses_balance_check_button1">
+              <b-form-checkbox
+                v-model="expenses_balance_check_button1"
+                name="expenses_balance_check_button1"
+                switch size="sm"
+              >
+                show in expenses balance
+              </b-form-checkbox>
+            </div>
+          </b-collapse>
         </div>
-        <!-- grid end -->
-        <b-form-checkbox
-          v-model="hsbc_a1"
-          name="main-balance-check-button2"
-          switch
-        >
-          show in main balance
-        </b-form-checkbox>
-
-        <br />
-        <b-form-checkbox
-          v-model="checked2"
-          name="expenses-balance-check-button2"
-          switch
-        >
-          show in expenses balance
-        </b-form-checkbox>
-
-        
-    </b-collapse>
-
-    <br />
-    <b-button v-b-toggle.collapse-2 variant="outline-primary">
-      <span class="when-opened">
-        <b-icon-caret-up></b-icon-caret-up>
-      </span>
-      <span class="when-closed">
-        <b-icon-caret-down></b-icon-caret-down>
-      </span>
-      HUF 14,262.00
-    </b-button>
-
-    <b-collapse id="collapse-2" class="mt-2">
-      
-
-
-    </b-collapse>
+      </b-collapse>
+      <!-- grid accounts collapse/expand end -->
+      <!-- accounts list end -->
+    </div>
+    <!-- currency list aggregate end -->
   </div>
 </template>
 
@@ -66,10 +58,8 @@
 export default {
   data() {
     return {
-      hsbc_a1: false,
-      checked2: false,
-      checked3: false,
-      checked4: true,
+      main_balance_check_button1: true,
+      expenses_balance_check_button1: false,
     }
   },
 }
@@ -81,30 +71,33 @@ export default {
   display: none;
 }
 
+.accounts-collapse {
+  background: azure;
+}
+
 /* grid */
 .grid-container {
-
-  margin:auto;
-  padding:0.3rem;
+  margin: auto;
+  padding: 0.3rem;
   display: grid;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.2rem;
-  grid-template-columns: auto auto auto auto;
-  text-align:left;
+  grid-template-columns: auto auto auto auto auto;
+  text-align: left;
   max-width: 40rem;
-  border:1px solid black;
-
+  /* border: 1px solid black; */
 }
 .grid-container > div {
-  border:1px solid black;
-  /* max-width:10rem; */
+  /* border: 1px solid black; */
 }
-.item2 {
-  grid-column-start: 2;
-  grid-column-end: 5;
-}
-.item6 {
+.grid_item_amount {
   text-align: right;
 }
-
+#collapse-1-inner {
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+.gear {
+  outline: none;
+}
 </style>
