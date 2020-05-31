@@ -12,10 +12,10 @@
           <b-icon-caret-down></b-icon-caret-down>
         </span>
 
-        {{ currency.currency }} {{ currency.balance }}
+        {{ currency.code }} {{ currency.balance }}
       </b-button>
       <div
-        v-for="account in account"
+        v-for="account in currency.accounts"
         :key="account.id_account"
         class="container"
       >
@@ -23,16 +23,16 @@
         <b-collapse id="collapse-1" class="mt-2 accounts-collapse">
           <div class="grid-container">
             <div class="grid-item1">{{ account.acc_nick }}</div>
-            <div class="grid-item2">current account</div>
-            <div class="grid-item3">GBP</div>
-            <div class="grid_item_amount">86.57</div>
+            <div class="grid-item2">{{ account.acc_type }}</div>
+            <div class="grid-item3">{{ account.acc_number }}</div>
+            <div class="grid_item_amount">{{ account.amount }}</div>
             <div class="grid-item9">
               <b-icon-gear-fill v-b-toggle.collapse-1-inner class="gear" />
             </div>
             <b-collapse id="collapse-1-inner">
               <div class="grid_item_main_balance_check_button1">
                 <b-form-checkbox
-                  v-model="main_balance_check_button1"
+                  v-model="main_balance_check_button1" 
                   name="main_balance_check_button1"
                   switch
                   size="sm"
