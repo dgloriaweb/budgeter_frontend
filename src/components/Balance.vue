@@ -1,10 +1,6 @@
 <template>
   <div>
-    <ul>
-      <li v-for="account in accounts" :key="account.id">
-        
-      </li>
-    </ul>
+    
     <h1>Balance</h1>
     <!-- currency balance aggregate -->
     <div v-for="account in accounts" :key="account.id" class="container">
