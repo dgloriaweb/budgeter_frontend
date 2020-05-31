@@ -1,9 +1,13 @@
 <template>
   <div>
-    <p>{{ result}}</p>
+    <ul>
+      <li v-for="account in accounts" :key="account.id">
+        
+      </li>
+    </ul>
     <h1>Balance</h1>
     <!-- currency balance aggregate -->
-    <div class="container">
+    <div v-for="account in accounts" :key="account.id" class="container">
       <!-- accounts list  -->
       <b-button v-b-toggle.collapse-1 variant="outline-primary">
         <span class="when-opened">
@@ -13,7 +17,7 @@
           <b-icon-caret-down></b-icon-caret-down>
         </span>
 
-        GBP 1,346.57
+        {{account.currency}} 1,346.57
       </b-button>
 
       <!-- grid accounts collapse/expand -->
@@ -63,54 +67,7 @@ export default {
     return {
       main_balance_check_button1: true,
       expenses_balance_check_button1: false,
-      // res: [
-      //   {
-      //     currency: 'GBP',
-      //     accounts: [
-      //       {
-      //         bank: 'HSBC',
-      //         acc_nick: 'HSBC A1',
-      //         acc_type: 'current account',
-      //         acc_number: '12345675',
-      //         amount: '86.57',
-      //       },
-      //       {
-      //         bank: 'HSBC',
-      //         acc_nick: 'HSBC A2',
-      //         acc_type: 'savings account',
-      //         acc_number: '15436254',
-      //         amount: '1240.00',
-      //       },
-      //       {
-      //         bank: 'HSBC',
-      //         acc_nick: 'HSBC L1',
-      //         acc_type: 'personal loan',
-      //         acc_number: '1468451556',
-      //         amount: '1720.00',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     currency: 'HUF',
-      //     accounts: [
-      //       {
-      //         bank: 'K&H',
-      //         acc_nick: 'K&H A1',
-      //         acc_type: 'current account',
-      //         acc_number: '931100180809',
-      //         amount: '14250.00',
-      //       },
-      //       {
-      //         bank: 'K&H',
-      //         acc_nick: 'K&H A2',
-      //         acc_type: 'current account',
-      //         acc_number: '5881235863513',
-      //         amount: '12',
-      //       },
-      //     ],
-      //   },
-      // ],
-      result:{}
+      accounts:{}
     }
   },
   created: function() {
@@ -118,15 +75,15 @@ export default {
   },
   methods: {
     fetchData: async function() {
-      // try {
-      //   const res = await fetch(
-      //     `./src/assets/json/mock1.txt`
-      //   )
-      //   const result = await res.json()
-      //   this.result = result
-      // } catch (e) {
-      //   console.log(e)
-      // }
+      try {
+        const res = await fetch(
+          `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/results`
+        )
+        const accounts = await res.json()
+        this.accounts = accounts
+      } catch (e) {
+        console.log(e)
+      }
     },
   }
 }

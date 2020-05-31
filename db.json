@@ -1,9 +1,11 @@
 {
   "results": [
     {
+      "id" :1,
       "currency": "GBP",
       "accounts": [
         {
+          "id_account":1,
           "bank": "HSBC",
           "acc_nick": "HSBC A1",
           "acc_type": "current account",
@@ -11,6 +13,7 @@
           "amount": "86.57"
         },
         {
+          "id_account":2,
           "bank": "HSBC",
           "acc_nick": "HSBC A2",
           "acc_type": "savings account",
@@ -18,6 +21,7 @@
           "amount": "1240.00"
         },
         {
+          "id_account":3,
           "bank": "HSBC",
           "acc_nick": "HSBC L1",
           "acc_type": "personal loan",
@@ -27,9 +31,11 @@
       ]
     },
     {
+      "id" :2,
       "currency": "HUF",
       "accounts": [
         {
+          "id_account":1,
           "bank": "K&H",
           "acc_nick": "K&H A1",
           "acc_type": "current account",
@@ -37,6 +43,7 @@
           "amount": "14250.00"
         },
         {
+          "id_account":2,
           "bank": "K&H",
           "acc_nick": "K&H A2",
           "acc_type": "current account",
