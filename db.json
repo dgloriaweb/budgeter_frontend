@@ -2,7 +2,7 @@
   "results": [
     {
       "id" :1,
-      "currency": "GBP",
+      "code": "GBP",
       "balance":  1346.57,
       "accounts": [
         {
@@ -33,9 +33,8 @@
     },
     {
       "id" :2,
-      "currency": "HUF",
+      "code": "HUF",
       "balance":  14262.00,
-
       "accounts": [
         {
           "id_account":1,

@@ -1,5 +1,7 @@
 # budgeter_frontend
 
+Use release as main branch, because master is used to use the mock json stuff of https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/results
+
 ## Project setup
 ```
 npm install
