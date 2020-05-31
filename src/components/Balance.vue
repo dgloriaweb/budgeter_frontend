@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Balance</h1>
-    <!-- currency balance aggregate -->
+    <!-- result balance aggregate -->
     <div v-for="currency in currencies" :key="currency.id" class="container">
       <!-- accounts list  -->
       <b-button v-b-toggle.collapse-1 variant="outline-primary">
@@ -67,7 +67,7 @@ export default {
     return {
       main_balance_check_button1: true,
       expenses_balance_check_button1: false,
-      accounts: {},
+      currencies: {},
     }
   },
   created: function() {
