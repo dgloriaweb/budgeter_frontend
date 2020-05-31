@@ -3,6 +3,7 @@
     {
       "id" :1,
       "currency": "GBP",
+      "balance":  1346.57,
       "accounts": [
         {
           "id_account":1,
@@ -33,6 +34,8 @@
     {
       "id" :2,
       "currency": "HUF",
+      "balance":  14262.00,
+
       "accounts": [
         {
           "id_account":1,

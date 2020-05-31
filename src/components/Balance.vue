@@ -17,7 +17,7 @@
           <b-icon-caret-down></b-icon-caret-down>
         </span>
 
-        {{account.currency}} 1,346.57
+        {{account.currency}} {{account.balance}}
       </b-button>
 
       <!-- grid accounts collapse/expand -->
