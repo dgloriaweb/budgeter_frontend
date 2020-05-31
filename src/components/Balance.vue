@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>{{ result}}</p>
     <h1>Balance</h1>
     <!-- currency balance aggregate -->
     <div class="container">
@@ -30,7 +31,8 @@
               <b-form-checkbox
                 v-model="main_balance_check_button1"
                 name="main_balance_check_button1"
-                switch size="sm"
+                switch
+                size="sm"
               >
                 show in main balance
               </b-form-checkbox>
@@ -39,7 +41,8 @@
               <b-form-checkbox
                 v-model="expenses_balance_check_button1"
                 name="expenses_balance_check_button1"
-                switch size="sm"
+                switch
+                size="sm"
               >
                 show in expenses balance
               </b-form-checkbox>
@@ -60,8 +63,72 @@ export default {
     return {
       main_balance_check_button1: true,
       expenses_balance_check_button1: false,
+      // res: [
+      //   {
+      //     currency: 'GBP',
+      //     accounts: [
+      //       {
+      //         bank: 'HSBC',
+      //         acc_nick: 'HSBC A1',
+      //         acc_type: 'current account',
+      //         acc_number: '12345675',
+      //         amount: '86.57',
+      //       },
+      //       {
+      //         bank: 'HSBC',
+      //         acc_nick: 'HSBC A2',
+      //         acc_type: 'savings account',
+      //         acc_number: '15436254',
+      //         amount: '1240.00',
+      //       },
+      //       {
+      //         bank: 'HSBC',
+      //         acc_nick: 'HSBC L1',
+      //         acc_type: 'personal loan',
+      //         acc_number: '1468451556',
+      //         amount: '1720.00',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     currency: 'HUF',
+      //     accounts: [
+      //       {
+      //         bank: 'K&H',
+      //         acc_nick: 'K&H A1',
+      //         acc_type: 'current account',
+      //         acc_number: '931100180809',
+      //         amount: '14250.00',
+      //       },
+      //       {
+      //         bank: 'K&H',
+      //         acc_nick: 'K&H A2',
+      //         acc_type: 'current account',
+      //         acc_number: '5881235863513',
+      //         amount: '12',
+      //       },
+      //     ],
+      //   },
+      // ],
+      result:{}
     }
   },
+  created: function() {
+    this.fetchData()
+  },
+  methods: {
+    fetchData: async function() {
+      // try {
+      //   const res = await fetch(
+      //     `./src/assets/json/mock1.txt`
+      //   )
+      //   const result = await res.json()
+      //   this.result = result
+      // } catch (e) {
+      //   console.log(e)
+      // }
+    },
+  }
 }
 </script>
 
