@@ -2,7 +2,7 @@
   <div>
     <h1>Balance</h1>
     <!-- result balance aggregate -->
-    <div v-for="currency in currencies" :key="currency.id" class="container">
+    <div v-for="(currency,mainindex) in currencies" :key="currency.id" class="container">
       <!-- accounts list  -->
       <b-button v-b-toggle.collapse-1 variant="outline-primary">
         <span class="when-opened">
@@ -16,7 +16,7 @@
       </b-button>
       <!-- grid accounts collapse/expand -->
       <div
-        v-for="(account, index) in currency.accounts"
+        v-for="(account, subindex) in currency.accounts"
         :key="account.id_account"
         class="container"
       >
@@ -28,11 +28,11 @@
             <div class="grid_item_amount">{{ account.amount }}</div>
             <div class="grid-item9">
               <b-icon-gear-fill
-                v-b-toggle="'collapse-1-inner' + index"
+                v-b-toggle="'collapse-1-inner' + mainindex+'-'+subindex"
                 class="gear"
               />
             </div>
-            <b-collapse :id="'collapse-1-inner' + index">
+            <b-collapse :id="'collapse-1-inner'  + mainindex+'-'+ subindex">
               <div class="grid_item_main_balance_check_button1">
                 <b-form-checkbox
                   v-model="main_balance_check_button1"
