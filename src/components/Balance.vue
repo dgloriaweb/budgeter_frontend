@@ -8,7 +8,7 @@
       <label for="chk1">my checkbox</label> -->
 
       <!-- result balance aggregate -->
-      <b-button v-b-toggle.collapse-1 variant="outline-primary">
+      <b-button v-b-toggle="'collapse-1' +currency.id"  variant="outline-primary">
         <span class="when-opened">
           <b-icon-caret-up></b-icon-caret-up>
         </span>
@@ -24,7 +24,7 @@
         :key="account.id_account"
         class="container"
       >
-        <b-collapse id="collapse-1" class="mt-2 accounts-collapse">
+        <b-collapse :id="'collapse-1' +currency.id" class="mt-2 accounts-collapse">
           <div class="grid-container">
             <div class="grid-item1">{{ account.acc_nick }}</div>
             <div class="grid-item2">{{ account.acc_type }}</div>
