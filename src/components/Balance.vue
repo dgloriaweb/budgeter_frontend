@@ -35,8 +35,8 @@
             <b-collapse :id="'collapse-1-inner'  + mainindex+'-'+ subindex">
               <div class="grid_item_main_balance_check_button1">
                 <b-form-checkbox
-                  v-model="main_balance_check_button1"
-                  name="main_balance_check_button1"
+                  :v-model="account.show_in_main_balance"
+                  name="account.show_in_main_balance"
                   switch
                   size="sm"
                 >
@@ -45,8 +45,8 @@
               </div>
               <div class="grid_item_expenses_balance_check_button1">
                 <b-form-checkbox
-                  v-model="expenses_balance_check_button1"
-                  name="expenses_balance_check_button1"
+                  :v-model="account.show_in_expenses_balance"
+                  name="account.show_in_expenses_balance"
                   switch
                   size="sm"
                 >
@@ -68,8 +68,6 @@
 export default {
   data() {
     return {
-      main_balance_check_button1: true,
-      expenses_balance_check_button1: false,
       currencies: {},
     }
   },
