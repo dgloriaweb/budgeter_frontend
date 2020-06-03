@@ -1,8 +1,7 @@
 {
   "results": [
     {
-      "checkbox_test": false,
-      "test": "test",
+      "checkbox_test": true,
       "currencies": [
         {
           "id": 1,
