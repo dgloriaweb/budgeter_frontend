@@ -40,7 +40,7 @@
     },
     {
       "id": 2,
-      "checkbox_test": true,
+      "checkbox_test": false,
       "code": "HUF",
       "balance": 14262.0,
       "accounts": [

@@ -1,11 +1,14 @@
 <template>
   <div>
-    <input type="checkbox" id="chk1" v-model="results[0].checkbox_test"/>
+        <div v-for="(currency,mainindex) in currencies" :key="currency.id" class="container">
+
+    <input type="checkbox" id="chk1" v-model="currencies[mainindex].checkbox_test"/>
     <label for="chk1">my checkbox</label>
     <h1>Balance</h1>
     <!-- result balance aggregate -->
     
     <!-- currency list aggregate end -->
+        </div>
   </div>
 </template>
 
@@ -13,7 +16,7 @@
 export default {
   data() {
     return {
-      results: {},
+      currencies: {},
     }
   },
   created: function() {
@@ -23,10 +26,10 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/results`
+          `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/currencies`
         )
-        const results = await res.json()
-        this.results = results
+        const currencies = await res.json()
+        this.currencies = currencies
       } catch (e) {
         console.log(e)
       }
