@@ -4,6 +4,7 @@
     <label for="chk1">my checkbox</label>
     <h1>Balance</h1>
     <!-- result balance aggregate -->
+    
     <!-- currency list aggregate end -->
   </div>
 </template>

@@ -1,71 +1,68 @@
 {
-  "results": [
+  "currencies": [
     {
-      "checkbox_test": true,
-      "currencies": [
+      "id": 1,
+      "checkbox_test": false,
+      "code": "GBP",
+      "balance": 1346.57,
+      "accounts": [
         {
-          "id": 1,
-          "code": "GBP",
-          "balance": 1346.57,
-          "accounts": [
-            {
-              "id_account": 1,
-              "bank": "HSBC",
-              "acc_nick": "HSBC A1",
-              "acc_type": "current account",
-              "acc_number": "12345675",
-              "amount": "86.57",
-              "show_in_main_balance": 1,
-              "show_in_expenses_balance": 1
-            },
-            {
-              "id_account": 2,
-              "bank": "HSBC",
-              "acc_nick": "HSBC A2",
-              "acc_type": "savings account",
-              "acc_number": "15436254",
-              "amount": "1240.00",
-              "show_in_main_balance": 1,
-              "show_in_expenses_balance": 1
-            },
-            {
-              "id_account": 3,
-              "bank": "HSBC",
-              "acc_nick": "HSBC L1",
-              "acc_type": "personal loan",
-              "acc_number": "1468451556",
-              "amount": "1720.00",
-              "show_in_main_balance": 1,
-              "show_in_expenses_balance": 1
-            }
-          ]
+          "id_account": 1,
+          "bank": "HSBC",
+          "acc_nick": "HSBC A1",
+          "acc_type": "current account",
+          "acc_number": "12345675",
+          "amount": "86.57",
+          "show_in_main_balance": 1,
+          "show_in_expenses_balance": 1
         },
         {
-          "id": 2,
-          "code": "HUF",
-          "balance": 14262.0,
-          "accounts": [
-            {
-              "id_account": 1,
-              "bank": "K&H",
-              "acc_nick": "K&H A1",
-              "acc_type": "current account",
-              "acc_number": "931100180809",
-              "amount": "14250.00",
-              "show_in_main_balance": 1,
-              "show_in_expenses_balance": 1
-            },
-            {
-              "id_account": 2,
-              "bank": "K&H",
-              "acc_nick": "K&H A2",
-              "acc_type": "current account",
-              "acc_number": "5881235863513",
-              "amount": "12",
-              "show_in_main_balance": 1,
-              "show_in_expenses_balance": 1
-            }
-          ]
+          "id_account": 2,
+          "bank": "HSBC",
+          "acc_nick": "HSBC A2",
+          "acc_type": "savings account",
+          "acc_number": "15436254",
+          "amount": "1240.00",
+          "show_in_main_balance": 1,
+          "show_in_expenses_balance": 1
+        },
+        {
+          "id_account": 3,
+          "bank": "HSBC",
+          "acc_nick": "HSBC L1",
+          "acc_type": "personal loan",
+          "acc_number": "1468451556",
+          "amount": "1720.00",
+          "show_in_main_balance": 1,
+          "show_in_expenses_balance": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "checkbox_test": true,
+      "code": "HUF",
+      "balance": 14262.0,
+      "accounts": [
+        {
+          "id_account": 1,
+          "bank": "K&H",
+          "acc_nick": "K&H A1",
+          "acc_type": "current account",
+          "acc_number": "931100180809",
+          "amount": "14250.00",
+          "show_in_main_balance": 1,
+          "show_in_expenses_balance": 1
+        },
+        {
+          "id_account": 2,
+          "bank": "K&H",
+          "acc_nick": "K&H A2",
+          "acc_type": "current account",
+          "acc_number": "5881235863513",
+          "amount": "12",
+          "show_in_main_balance": 1,
+          "show_in_expenses_balance": 1
         }
       ]
     }
