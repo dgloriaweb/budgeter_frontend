@@ -1,8 +1,8 @@
 <template>
   <div>
-        <div v-for="(currency,mainindex) in currencies" :key="currency.id" class="container">
+        <div v-for="(currency) in currencies" :key="currency.id" class="container">
 
-    <input type="checkbox" id="chk1" v-model="currencies[mainindex].checkbox_test"/>
+    <input type="checkbox" id="chk1" v-model="checkbox_test"/>
     <label for="chk1">my checkbox</label>
     <h1>Balance</h1>
     <!-- result balance aggregate -->
