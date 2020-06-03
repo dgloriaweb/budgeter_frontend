@@ -2,6 +2,7 @@
   "results": [
     {
       "checkbox_test": false,
+      "test": "test",
       "currencies": [
         {
           "id": 1,
