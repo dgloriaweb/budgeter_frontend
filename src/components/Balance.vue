@@ -2,8 +2,11 @@
   <div>
     <h1>Balance</h1>
     <div v-for="currency in currencies" :key="currency.id" class="container">
-      <input type="checkbox" id="chk1" v-model="currency.checkbox_test" />
-      <label for="chk1">my checkbox</label>
+
+      <!-- test checkbox -->
+      <!-- <input type="checkbox" id="chk1" v-model="currency.checkbox_test" />
+      <label for="chk1">my checkbox</label> -->
+
       <!-- result balance aggregate -->
       <b-button v-b-toggle.collapse-1 variant="outline-primary">
         <span class="when-opened">
@@ -25,7 +28,7 @@
           <div class="grid-container">
             <div class="grid-item1">{{ account.acc_nick }}</div>
             <div class="grid-item2">{{ account.acc_type }}</div>
-            <div class="grid-item3">{{ account.acc_number }}</div>
+            <!-- <div class="grid-item3">{{ account.acc_number }}</div> -->
             <div class="grid_item_amount">{{ account.amount }}</div>
             <div class="grid-item9">
               <b-icon-gear-fill
@@ -33,8 +36,10 @@
                 class="gear"
               />
             </div>
-            <b-collapse :id="'collapse-1-inner' +currency.id+'-'+ account.id_account">
+            <b-collapse :id="'collapse-1-inner' +currency.id+'-'+ account.id_account"  style="grid-column:1/6;">
               <div class="grid_item_main_balance_check_button1">
+            <div class="grid-item3">Account number: {{ account.acc_number }}</div>
+
                 <b-form-checkbox
                   v-model="account.show_in_main_balance"
                   name="account.show_in_main_balance"
@@ -106,7 +111,7 @@ export default {
   display: grid;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.2rem;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: 3fr 5fr 4fr 1fr;
   text-align: left;
   max-width: 40rem;
   /* border: 1px solid black; */
@@ -117,10 +122,10 @@ export default {
 .grid_item_amount {
   text-align: right;
 }
-#collapse-1-inner {
-  grid-column-start: 1;
-  grid-column-end: 6;
+.grid-item3 {
+  padding:0.5rem;
 }
+
 .gear {
   outline: none;
 }
