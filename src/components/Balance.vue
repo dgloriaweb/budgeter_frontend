@@ -1,10 +1,10 @@
 <template>
   <div>
-    <input type="checkbox" id="chk1" v-model="checkboxTest"/>
+    <input type="checkbox" id="chk1" v-model="results[0].checkbox_test"/>
     <label for="chk1">my checkbox</label>
     <h1>Balance</h1>
     <!-- result balance aggregate -->
-    <div v-for="(currency,mainindex) in currencies" :key="currency.id" class="container">
+    <div v-for="(currency,mainindex) in results" :key="currency.id" class="container">
       <!-- accounts list  -->
       <b-button v-b-toggle.collapse-1 variant="outline-primary">
         <span class="when-opened">
@@ -70,7 +70,7 @@
 export default {
   data() {
     return {
-      currencies: {},
+      results: {},
     }
   },
   created: function() {
@@ -80,10 +80,10 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend`
+          `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/results`
         )
-        const currencies = await res.json()
-        this.currencies = currencies
+        const results = await res.json()
+        this.results = results
       } catch (e) {
         console.log(e)
       }
