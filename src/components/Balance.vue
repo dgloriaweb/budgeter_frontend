@@ -1,11 +1,7 @@
 <template>
   <div>
     <h1>Balance</h1>
-    <div
-      v-for="currency in currencies"
-      :key="currency.id"
-      class="container"
-    >
+    <div v-for="currency in currencies" :key="currency.id" class="container">
       <input type="checkbox" id="chk1" v-model="currency.checkbox_test" />
       <label for="chk1">my checkbox</label>
       <!-- result balance aggregate -->
@@ -33,16 +29,14 @@
             <div class="grid_item_amount">{{ account.amount }}</div>
             <div class="grid-item9">
               <b-icon-gear-fill
-                v-b-toggle="'collapse-1-inner'+account.id_account"
+                v-b-toggle="'collapse-1-inner' +currency.id+'-'+ account.id_account"
                 class="gear"
               />
             </div>
-            <b-collapse :id="'collapse-1-inner'+account.id_account">
+            <b-collapse :id="'collapse-1-inner' +currency.id+'-'+ account.id_account">
               <div class="grid_item_main_balance_check_button1">
                 <b-form-checkbox
-                  v-model="
-                    account.show_in_main_balance
-                  "
+                  v-model="account.show_in_main_balance"
                   name="account.show_in_main_balance"
                   switch
                   size="sm"
@@ -52,9 +46,7 @@
               </div>
               <div class="grid_item_expenses_balance_check_button1">
                 <b-form-checkbox
-                  v-model="
-                    account.show_in_expenses_balance
-                  "
+                  v-model="account.show_in_expenses_balance"
                   name="account.show_in_expenses_balance"
                   switch
                   size="sm"
