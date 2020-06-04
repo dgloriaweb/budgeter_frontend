@@ -3,7 +3,6 @@
     <!-- START Balance bit starts here -->
     <h1>Balance</h1>
     <div v-for="currency in currencies" :key="currency.id" class="container">
- 
       <!-- result balance aggregate -->
       <b-button
         v-b-toggle="'collapse-1' + currency.id"
@@ -76,17 +75,6 @@
       <!-- currency list aggregate end -->
     </div>
     <!-- END Balance bit ends here -->
-
-    <!-- ******************************** -->
-
-    <!-- START Transaction bit starts here -->
-
-    <h1>Transactions</h1>
-    <div v-for="transaction in transactions" :key="transaction.id" class="container">
-
-    </div>
-
-    <!-- END Transaction bit ends here -->
   </div>
 </template>
 
@@ -108,7 +96,6 @@ export default {
         )
         const db = await res.json()
         this.currencies = db.currencies
-        this.transactions = db.transactions
       } catch (e) {
         console.log(e)
       }

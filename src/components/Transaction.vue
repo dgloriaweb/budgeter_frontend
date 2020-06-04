@@ -1,12 +1,12 @@
 <template>
     <div>
-        {{$route.params.id}}
+        {{transaction.amount}}
     </div>
 </template>
 
 <script>
     export default {
-        
+        props: ['transaction']
     }
 </script>
 
