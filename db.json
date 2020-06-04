@@ -14,7 +14,7 @@
           "acc_number": "12345675",
           "amount": "86.57",
           "show_in_main_balance": 1,
-          "show_in_expenses_balance": 1
+          "show_in_transactions_balance": 1
         },
         {
           "id_account": 2,
@@ -24,7 +24,7 @@
           "acc_number": "15436254",
           "amount": "1240.00",
           "show_in_main_balance": 1,
-          "show_in_expenses_balance": 1
+          "show_in_transactions_balance": 1
         },
         {
           "id_account": 3,
@@ -34,7 +34,7 @@
           "acc_number": "1468451556",
           "amount": "1720.00",
           "show_in_main_balance": 1,
-          "show_in_expenses_balance": 1
+          "show_in_transactions_balance": 1
         }
       ]
     },
@@ -52,7 +52,7 @@
           "acc_number": "931100180809",
           "amount": "14250.00",
           "show_in_main_balance": 1,
-          "show_in_expenses_balance": 1
+          "show_in_transactions_balance": 1
         },
         {
           "id_account": 2,
@@ -62,9 +62,81 @@
           "acc_number": "5881235863513",
           "amount": "12",
           "show_in_main_balance": 1,
-          "show_in_expenses_balance": 1
+          "show_in_transactions_balance": 1
         }
       ]
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "currency": "HUF",
+      "account": "KH 1",
+      "description": "bank ktg",
+      "amount": -710
+    },
+    {
+      "id": 2,
+      "currency": "HUF",
+      "account": "KH 1",
+      "description": "spotify",
+      "amount": -1800
+    },
+    {
+      "id": 3,
+      "currency": "HUF",
+      "account": "KH 1",
+      "description": "nypt",
+      "amount": -7580
+    },
+    {
+      "id": 4,
+      "currency": "HUF",
+      "account": "KH 1",
+      "description": "life insurance",
+      "amount": -3260
+    },
+    {
+      "id": 5,
+      "currency": "HUF",
+      "account": "KH 1",
+      "description": "bank card ",
+      "amount": -7500
+    },
+    {
+      "id": 6,
+      "currency": "HUF",
+      "account": "KH 1",
+      "description": "transfer",
+      "amount": 15000
+    },
+    {
+      "id": 7,
+      "currency": "GBP",
+      "account": "HSBC C1",
+      "description": "SLL swimming membership",
+      "amount": -26.5
+    },
+    {
+      "id": 8,
+      "currency": "GBP",
+      "account": "HSBC C1",
+      "description": "tax refund",
+      "amount": 1200
+    },
+    {
+      "id": 9,
+      "currency": "GBP",
+      "account": "HSBC C1",
+      "description": "lottery",
+      "amount": -16
+    },
+    {
+      "id": 10,
+      "currency": "GBP",
+      "account": "HSBC C1",
+      "description": "KA patreon",
+      "amount": -8
     }
   ]
 }
