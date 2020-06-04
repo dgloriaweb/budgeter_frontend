@@ -49,14 +49,14 @@
                   show in main balance
                 </b-form-checkbox>
               </div>
-              <div class="grid_item_expenses_balance_check_button1">
+              <div class="grid_item_transactions_balance_check_button1">
                 <b-form-checkbox
-                  v-model="account.show_in_expenses_balance"
-                  name="account.show_in_expenses_balance"
+                  v-model="account.show_in_transactions_balance"
+                  name="account.show_in_transactions_balance"
                   switch
                   size="sm"
                 >
-                  show in expenses balance
+                  show in transactions balance
                 </b-form-checkbox>
               </div>
             </b-collapse>
