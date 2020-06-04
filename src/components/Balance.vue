@@ -1,14 +1,14 @@
 <template>
   <div>
+    <!-- START Balance bit starts here -->
     <h1>Balance</h1>
     <div v-for="currency in currencies" :key="currency.id" class="container">
-
-      <!-- test checkbox -->
-      <!-- <input type="checkbox" id="chk1" v-model="currency.checkbox_test" />
-      <label for="chk1">my checkbox</label> -->
-
+ 
       <!-- result balance aggregate -->
-      <b-button v-b-toggle="'collapse-1' +currency.id"  variant="outline-primary">
+      <b-button
+        v-b-toggle="'collapse-1' + currency.id"
+        variant="outline-primary"
+      >
         <span class="when-opened">
           <b-icon-caret-up></b-icon-caret-up>
         </span>
@@ -24,7 +24,10 @@
         :key="account.id_account"
         class="container"
       >
-        <b-collapse :id="'collapse-1' +currency.id" class="mt-2 accounts-collapse">
+        <b-collapse
+          :id="'collapse-1' + currency.id"
+          class="mt-2 accounts-collapse"
+        >
           <div class="grid-container">
             <div class="grid-item1">{{ account.acc_nick }}</div>
             <div class="grid-item2">{{ account.acc_type }}</div>
@@ -32,13 +35,20 @@
             <div class="grid_item_amount">{{ account.amount }}</div>
             <div class="grid-item9">
               <b-icon-gear-fill
-                v-b-toggle="'collapse-1-inner' +currency.id+'-'+ account.id_account"
+                v-b-toggle="
+                  'collapse-1-inner' + currency.id + '-' + account.id_account
+                "
                 class="gear"
               />
             </div>
-            <b-collapse :id="'collapse-1-inner' +currency.id+'-'+ account.id_account"  style="grid-column:1/6;">
+            <b-collapse
+              :id="'collapse-1-inner' + currency.id + '-' + account.id_account"
+              style="grid-column:1/6;"
+            >
               <div class="grid_item_main_balance_check_button1">
-            <div class="grid-item3">Account number: {{ account.acc_number }}</div>
+                <div class="grid-item3">
+                  Account number: {{ account.acc_number }}
+                </div>
 
                 <b-form-checkbox
                   v-model="account.show_in_main_balance"
@@ -65,6 +75,18 @@
       </div>
       <!-- currency list aggregate end -->
     </div>
+    <!-- END Balance bit ends here -->
+
+    <!-- ******************************** -->
+
+    <!-- START Transaction bit starts here -->
+
+    <h1>Transactions</h1>
+    <div v-for="transaction in transactions" :key="transaction.id" class="container">
+
+    </div>
+
+    <!-- END Transaction bit ends here -->
   </div>
 </template>
 
@@ -86,6 +108,7 @@ export default {
         )
         const db = await res.json()
         this.currencies = db.currencies
+        this.transactions = db.transactions
       } catch (e) {
         console.log(e)
       }
@@ -124,7 +147,7 @@ export default {
   text-align: right;
 }
 .grid-item3 {
-  padding:0.5rem;
+  padding: 0.5rem;
 }
 
 .gear {

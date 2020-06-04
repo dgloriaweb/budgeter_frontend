@@ -2,6 +2,7 @@
   <div>
     
     <Balance />
+    
   </div>
 </template>
 
