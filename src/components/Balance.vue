@@ -118,6 +118,7 @@ export default {
 }
 .grid-container > div {
   /* border: 1px solid black; */
+  border: none;
 }
 .grid_item_amount {
   text-align: right;

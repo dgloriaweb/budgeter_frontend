@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <Main />
+    <router-view>
+      
+    </router-view>
   </div>
 </template>
 
 <script>
-import Main from './components/Main.vue'
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
@@ -17,7 +18,6 @@ Vue.use(IconsPlugin)
 export default {
   name: 'App',
   components: {
-    Main,
   },
 }
 </script>
