@@ -82,10 +82,10 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/currencies`
+          `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
         )
-        const currencies = await res.json()
-        this.currencies = currencies
+        const db = await res.json()
+        this.currencies = db.currencies
       } catch (e) {
         console.log(e)
       }
