@@ -48,27 +48,8 @@ export default {
 </script>
 
 <style scoped>
-/* grid */
-.grid-container {
-  margin: auto;
-  padding: 0.3rem;
-  display: grid;
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 0.2rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  text-align: left;
-  max-width: 40rem;
-  border: 1px solid black;
-  /* font-size: 1rem; */
-}
-.grid-container > div {
-  border: 1px solid black;
-  border: none;
-}
-.grid_item_amount {
-  text-align: right;
-}
-.grid-item3 {
-  padding: 0.5rem;
+
+ul{
+  list-style: none;
 }
 </style>
