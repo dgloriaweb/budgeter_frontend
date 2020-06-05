@@ -6,7 +6,7 @@
       </div>
 
       <div class="grid-item2">
-        {{ transaction.amount }}
+        {{ transaction.amount | to-float }}
       </div>
     </div>
   </div>
