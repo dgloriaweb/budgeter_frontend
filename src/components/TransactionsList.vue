@@ -5,7 +5,11 @@
     <h1>Transactions</h1>
 
     <ul>
-      <li class="list-group-item" v-for="transaction in transactions" :key="transaction.id">
+      <li
+        class="list-group-item"
+        v-for="transaction in transactions"
+        :key="transaction.id"
+      >
         <Transaction :transaction="transaction" />
       </li>
     </ul>
@@ -40,16 +44,19 @@ export default {
       }
     },
   },
-  components:
-  {
-      Transaction
-  }
+  components: {
+    Transaction,
+  },
 }
 </script>
 
 <style scoped>
-
-ul{
+.list-group-item {
+  padding: 0.1rem;
+}
+ul {
+  font-size: 0.6rem;
   list-style: none;
+  padding-inline-start: 0.1rem;
 }
 </style>

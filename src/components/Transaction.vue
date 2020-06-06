@@ -9,7 +9,7 @@
         {{ transaction.description }}
       </div>
       <div class="grid-item3">
-          {{ transaction.amount | to-float }}
+          {{ transaction.amount | toFloat }}
       </div>
       <div class="grid-item3">
           123456.00 
@@ -32,22 +32,16 @@ export default {
   display: grid;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.2rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
   max-width: 40rem;
-  border: 1px solid black;
-  /* font-size: 1rem; */
-}
-.grid-container > div {
-  border: 1px solid black;
-  border: none;
 }
 .grid_item_amount {
   text-align: right;
 }
-.grid-item1 {
+.grid-item1, .grid-item2 {
   text-align: left;
 }
-.grid-item2 {
+.grid-item3, .grid-item4 {
   text-align: right;
 }
 </style>

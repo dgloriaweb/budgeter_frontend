@@ -7,6 +7,7 @@
       <b-button
         v-b-toggle="'collapse-1' + currency.id"
         variant="outline-primary"
+        class="currency-button"
       >
         <span class="when-opened">
           <b-icon-caret-up></b-icon-caret-up>
@@ -15,7 +16,7 @@
           <b-icon-caret-down></b-icon-caret-down>
         </span>
 
-        {{ currency.code }} {{ currency.balance |to-float }}
+        {{ currency.code }} {{ currency.balance | toFloat }}
       </b-button>
       <!-- grid accounts collapse/expand -->
       <div
@@ -31,7 +32,9 @@
             <div class="grid-item1">{{ account.acc_nick }}</div>
             <div class="grid-item2">{{ account.acc_type }}</div>
             <!-- <div class="grid-item3">{{ account.acc_number }}</div> -->
-            <div class="grid_item_amount">{{ account.amount | to-float }}</div>
+            <div class="grid_item_amount">
+              {{ account.amount | toFloat }}
+            </div>
             <div class="grid-item9">
               <b-icon-gear-fill
                 v-b-toggle="
@@ -93,6 +96,7 @@ export default {
       try {
         const res = await fetch(
           `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
+          // this.db_json
         )
         const db = await res.json()
         this.currencies = db.currencies
@@ -105,6 +109,15 @@ export default {
 </script>
 
 <style scoped>
+
+/* .container{
+
+} */
+.currency-button {
+  background: #fff0db;
+  min-width: 15rem;
+}
+
 .collapsed > .when-opened,
 :not(.collapsed) > .when-closed {
   display: none;

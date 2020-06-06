@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    Header
-    <router-view>
-
-    </router-view>
+    <router-view> </router-view>
   </div>
 </template>
 
@@ -18,8 +15,7 @@ Vue.use(IconsPlugin)
 
 export default {
   name: 'App',
-  components: {
-  },
+  components: {},
 }
 </script>
 
@@ -34,5 +30,4 @@ export default {
 body {
   font-size: 1.8vh;
 }
-
 </style>
