@@ -12,7 +12,7 @@
           "acc_nick": "HSBC A1",
           "acc_type": "current account",
           "acc_number": "12345675",
-          "amount": "86.57",
+          "amount": 86.57,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         },
@@ -22,7 +22,7 @@
           "acc_nick": "HSBC A2",
           "acc_type": "savings account",
           "acc_number": "15436254",
-          "amount": "1240.00",
+          "amount": 1240.00,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         },
@@ -32,7 +32,7 @@
           "acc_nick": "HSBC L1",
           "acc_type": "personal loan",
           "acc_number": "1468451556",
-          "amount": "1720.00",
+          "amount": 1720.00,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         }
@@ -50,7 +50,7 @@
           "acc_nick": "K&H A1",
           "acc_type": "current account",
           "acc_number": "931100180809",
-          "amount": "14250.00",
+          "amount": 14250.00,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         },
@@ -60,7 +60,7 @@
           "acc_nick": "K&H A2",
           "acc_type": "current account",
           "acc_number": "5881235863513",
-          "amount": "12",
+          "amount": 12,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         }
