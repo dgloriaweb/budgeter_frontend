@@ -72,7 +72,7 @@
       "id": 1,
       "currency": "HUF",
       "account": "KH 1",
-      "description": "bank ktg",
+      "description": "bank acc exp",
       "amount": -710
     },
     {
@@ -86,7 +86,7 @@
       "id": 3,
       "currency": "HUF",
       "account": "KH 1",
-      "description": "nypt",
+      "description": "p pension",
       "amount": -7580
     },
     {
