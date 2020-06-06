@@ -2,11 +2,17 @@
   <div>
     <div class="grid-container">
       <div class="grid-item1">
-        {{ transaction.description }}
+        08/06/2020
       </div>
 
       <div class="grid-item2">
-        {{ transaction.amount | to-float }}
+        {{ transaction.description }}
+      </div>
+      <div class="grid-item3">
+          {{ transaction.amount | to-float }}
+      </div>
+      <div class="grid-item3">
+          123456.00 
       </div>
     </div>
   </div>
@@ -26,7 +32,7 @@ export default {
   display: grid;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.2rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   max-width: 40rem;
   border: 1px solid black;
   /* font-size: 1rem; */

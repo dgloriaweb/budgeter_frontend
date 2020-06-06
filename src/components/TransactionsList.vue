@@ -5,7 +5,7 @@
     <h1>Transactions</h1>
 
     <ul>
-      <li v-for="transaction in transactions" :key="transaction.id">
+      <li class="list-group-item" v-for="transaction in transactions" :key="transaction.id">
         <Transaction :transaction="transaction" />
       </li>
     </ul>
