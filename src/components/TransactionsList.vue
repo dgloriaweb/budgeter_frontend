@@ -5,17 +5,17 @@
     <h1>Transactions</h1>
     <table class="my-table">
         <tr v-for="transaction in db_json" :key="transaction.id">
-          <td>
+          <td style="text-align:left">
           {{ transaction.date }}
         </td>
 
-        <td>
+        <td style="text-align:left">
           {{ transaction.description }}
         </td>
-        <td>
+        <td style="text-align:right">
           {{ transaction.amount | toFloat }}
         </td>
-        <td>
+        <td style="text-align:right">
           123456.00
         </td>
 
@@ -26,13 +26,13 @@
           />
       
 
+        </td>
         <b-collapse
           :id="'collapse-1-side' + transaction.id"
           style="grid-column:1/6;"
         >
           <Transaction :transaction="transaction" />
         </b-collapse>
-        </td>
       <!-- END Transaction bit ends here -->
     </tr>
     
@@ -89,8 +89,14 @@ export default {
   font-size: 0.8rem;
 }
 
+.my-table {
+  width:100%;
+  max-width:30rem;
+  margin:auto;
+}
+
 .my-table td{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   max-width:4rem;
   font-size:0.6rem;
 }
