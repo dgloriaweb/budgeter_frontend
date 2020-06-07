@@ -2,7 +2,7 @@
   <div>
     <!-- START Balance bit starts here -->
     <h1>Balance</h1>
-    <div v-for="currency in db_json" :key="currency.id" class="container">
+    <div v-for="currency in db_json" :key="currency.id" git add>
       <!-- result balance aggregate -->
       <b-button
         v-b-toggle="'collapse-1' + currency.id"

@@ -3,43 +3,40 @@
     <!-- START Transaction bit starts here -->
 
     <h1>Transactions</h1>
+    <table class="my-table">
+        <tr v-for="transaction in db_json" :key="transaction.id">
+          <td>
+          {{ transaction.date }}
+        </td>
 
-    <div
-      class="grid-container"
-      v-for="transaction in db_json"
-      :key="transaction.id"
-    >
-      <div class="grid-item1">
-        {{ transaction.date }}
-      </div>
+        <td>
+          {{ transaction.description }}
+        </td>
+        <td>
+          {{ transaction.amount | toFloat }}
+        </td>
+        <td>
+          123456.00
+        </td>
 
-      <div class="grid-item2">
-        {{ transaction.description }}
-      </div>
-      <div class="grid-item3">
-        {{ transaction.amount | toFloat }}
-      </div>
-      <div class="grid-item4">
-        123456.00
-      </div>
+        <td>
+          <b-icon-eye
+            v-b-toggle="'collapse-1-side' + transaction.id"
+            class="eye"
+          />
       
-      <div class="grid-item5">
 
-      <b-icon-eye
-        v-b-toggle="'collapse-1-side' + transaction.id "
-        class="eye"
-      />
-      </div>
-
-      <b-collapse
-        :id="'collapse-1-side' + transaction.id "
-              style="grid-column:1/6;"
+        <b-collapse
+          :id="'collapse-1-side' + transaction.id"
+          style="grid-column:1/6;"
         >
-        <Transaction :transaction="transaction" />
-      </b-collapse>
-    </div>
-
-    <!-- END Transaction bit ends here -->
+          <Transaction :transaction="transaction" />
+        </b-collapse>
+        </td>
+      <!-- END Transaction bit ends here -->
+    </tr>
+    
+  </table>
   </div>
 </template>
 
@@ -89,5 +86,12 @@ export default {
   grid-row-gap: 0.2rem;
   grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
   max-width: 40rem;
+  font-size: 0.8rem;
+}
+
+.my-table td{
+  border: 1px solid black;
+  max-width:4rem;
+  font-size:0.6rem;
 }
 </style>

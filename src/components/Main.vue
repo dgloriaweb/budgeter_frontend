@@ -1,7 +1,11 @@
 <template>
   <div>
-    <Balance />
-    <TransactionsList />
+    <div>
+      <Balance />
+    </div>
+    <div>
+      <TransactionsList />
+    </div>
   </div>
 </template>
 
@@ -17,5 +21,4 @@ export default {
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
