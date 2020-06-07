@@ -9,14 +9,21 @@
         variant="outline-primary"
         class="currency-button"
       >
+        
+        <div class="grid-container-balance">
+          <div class="grid-item-balance1">
+            {{ currency.code }}
+          </div>
+          <div class="grid-item-balance2">
+            {{ currency.balance | toFloat }}
+          </div>
+        </div>
         <span class="when-opened">
           <b-icon-caret-up></b-icon-caret-up>
         </span>
         <span class="when-closed">
           <b-icon-caret-down></b-icon-caret-down>
         </span>
-
-        {{ currency.code }} {{ currency.balance | toFloat }}
       </b-button>
       <!-- grid accounts collapse/expand -->
       <div
@@ -31,11 +38,10 @@
           <div class="grid-container">
             <div class="grid-item1">{{ account.acc_nick }}</div>
             <div class="grid-item2">{{ account.acc_type }}</div>
-            <!-- <div class="grid-item3">{{ account.acc_number }}</div> -->
             <div class="grid_item_amount">
               {{ account.amount | toFloat }}
             </div>
-            <div class="grid-item9">
+            <div class="grid-item3">
               <b-icon-gear-fill
                 v-b-toggle="
                   'collapse-1-inner' + currency.id + '-' + account.id_account
@@ -48,7 +54,7 @@
               style="grid-column:1/5;"
             >
               <div class="grid_item_main_balance_check_button1">
-                <div class="grid-item3">
+                <div class="grid-item4">
                   Account number: {{ account.acc_number }}
                 </div>
 
@@ -124,7 +130,14 @@ export default {
   display: none;
 }
 
-/* grid */
+.grid-container-balance {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+}
+.grid-item-balance2 {
+  text-align: right;
+}
+/* grid accounts */
 .grid-container {
   margin: auto;
   padding: 0.3rem;
@@ -143,7 +156,7 @@ export default {
 .grid_item_amount {
   text-align: right;
 }
-.grid-item3 {
+.grid-item4 {
   padding: 0.5rem;
 }
 
