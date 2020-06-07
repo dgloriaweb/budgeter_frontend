@@ -75,17 +75,6 @@ export default {
 </script>
 
 <style scoped>
-/* grid */
-.grid-container {
-  margin: auto;
-  padding: 0.3rem;
-  display: grid;
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 0.2rem;
-  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
-  max-width: 40rem;
-  font-size: 0.8rem;
-}
 
 .my-table {
   width:100%;

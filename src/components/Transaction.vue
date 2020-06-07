@@ -23,7 +23,7 @@
 <script>
 export default {
   props: ['transaction'],
-  //add computed item for balance
+  
 }
 </script>
 

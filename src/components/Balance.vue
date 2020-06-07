@@ -141,6 +141,9 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   text-align: left;
   max-width: 40rem;
+  padding-bottom: 1rem;
+  font-size: 0.7rem;
+  max-width: 30rem;
   /* border: 1px solid black; */
 }
 .grid-container > div {
@@ -150,11 +153,5 @@ export default {
 .grid_item_amount {
   text-align: right;
 }
-.grid-item4 {
-  padding: 0.5rem;
-}
 
-.gear {
-  outline: none;
-}
 </style>
