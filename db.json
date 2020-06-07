@@ -22,7 +22,7 @@
           "acc_nick": "HSBC A2",
           "acc_type": "savings account",
           "acc_number": "15436254",
-          "amount": 1240.00,
+          "amount": 1240.0,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         },
@@ -32,7 +32,7 @@
           "acc_nick": "HSBC L1",
           "acc_type": "personal loan",
           "acc_number": "1468451556",
-          "amount": 1720.00,
+          "amount": 1720.0,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         }
@@ -50,7 +50,7 @@
           "acc_nick": "K&H A1",
           "acc_type": "current account",
           "acc_number": "931100180809",
-          "amount": 14250.00,
+          "amount": 14250.0,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         },
@@ -67,11 +67,12 @@
       ]
     }
   ],
-  "transactions": [
+  "computed_transactions": [
     {
       "id": 1,
       "currency": "HUF",
       "account": "KH 1",
+      "date": "28/06/2020",
       "description": "bank acc exp",
       "amount": -710
     },
@@ -79,6 +80,7 @@
       "id": 2,
       "currency": "HUF",
       "account": "KH 1",
+      "date": "15/06/2020",
       "description": "spotify",
       "amount": -1800
     },
@@ -86,6 +88,7 @@
       "id": 3,
       "currency": "HUF",
       "account": "KH 1",
+      "date": "15/06/2020",
       "description": "p pension",
       "amount": -7580
     },
@@ -93,6 +96,7 @@
       "id": 4,
       "currency": "HUF",
       "account": "KH 1",
+      "date": "15/06/2020",
       "description": "life insurance",
       "amount": -3260
     },
@@ -100,6 +104,7 @@
       "id": 5,
       "currency": "HUF",
       "account": "KH 1",
+      "date": "01/11/2020",
       "description": "bank card ",
       "amount": -7500
     },
@@ -107,6 +112,7 @@
       "id": 6,
       "currency": "HUF",
       "account": "KH 1",
+      "date": "15/06/2020",
       "description": "transfer",
       "amount": 15000
     },
@@ -114,6 +120,7 @@
       "id": 7,
       "currency": "GBP",
       "account": "HSBC C1",
+      "date": "01/07/2020",
       "description": "SLL swimming membership",
       "amount": -26.5
     },
@@ -121,6 +128,7 @@
       "id": 8,
       "currency": "GBP",
       "account": "HSBC C1",
+      "date": "09/06/2020",
       "description": "tax refund",
       "amount": 1200
     },
@@ -128,6 +136,7 @@
       "id": 9,
       "currency": "GBP",
       "account": "HSBC C1",
+      "date": "08/06/2020",
       "description": "lottery",
       "amount": -16
     },
@@ -135,8 +144,18 @@
       "id": 10,
       "currency": "GBP",
       "account": "HSBC C1",
+      "date": "08/06/2020",
       "description": "KA patreon",
       "amount": -8
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1
+
+    },
+    {
+      "id": 2
     }
   ]
 }

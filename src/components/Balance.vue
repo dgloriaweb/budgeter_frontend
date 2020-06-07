@@ -115,8 +115,8 @@ export default {
 
 } */
 .currency-button {
-  background: #fff0db;
   min-width: 15rem;
+  border:none;
 }
 
 .collapsed > .when-opened,
@@ -124,9 +124,6 @@ export default {
   display: none;
 }
 
-.accounts-collapse {
-  background: azure;
-}
 
 /* grid */
 .grid-container {

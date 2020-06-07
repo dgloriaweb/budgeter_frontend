@@ -2,25 +2,27 @@
   <div>
     <div class="grid-container">
       <div class="grid-item1">
-        08/06/2020
+        {{ transaction.date }}
       </div>
 
       <div class="grid-item2">
         {{ transaction.description }}
       </div>
       <div class="grid-item3">
-          {{ transaction.amount | toFloat }}
+        {{ transaction.amount | toFloat }}
       </div>
       <div class="grid-item3">
-          123456.00 
+       
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   props: ['transaction'],
+  //add computed item for balance
 }
 </script>
 
@@ -38,10 +40,12 @@ export default {
 .grid_item_amount {
   text-align: right;
 }
-.grid-item1, .grid-item2 {
+.grid-item1,
+.grid-item2 {
   text-align: left;
 }
-.grid-item3, .grid-item4 {
+.grid-item3,
+.grid-item4 {
   text-align: right;
 }
 </style>

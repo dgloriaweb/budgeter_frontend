@@ -26,7 +26,7 @@ export default {
   name: 'TransactionsList',
   data() {
     return {
-      db_json: json.transactions,
+      db_json: json.computed_transactions,
       transactions: [],
     }
   },
@@ -59,7 +59,6 @@ export default {
   padding: 0.1rem;
 }
 ul {
-  font-size: 0.6rem;
   list-style: none;
   padding-inline-start: 0.1rem;
 }
