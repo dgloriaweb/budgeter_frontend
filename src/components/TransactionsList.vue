@@ -7,7 +7,7 @@
     <ul>
       <li
         class="list-group-item"
-        v-for="transaction in transactions"
+        v-for="transaction in db_json"
         :key="transaction.id"
       >
         <Transaction :transaction="transaction" />
@@ -20,29 +20,33 @@
 
 <script>
 import Transaction from './Transaction.vue'
+import json from '../../db.json'
 
 export default {
   name: 'TransactionsList',
   data() {
     return {
+      db_json: json.transactions,
       transactions: [],
     }
   },
-  created: function() {
-    this.fetchData()
-  },
+  // DON'T DELETE!!! keep this for the real API !!!
+  // created: function() {
+  //   this.fetchData()
+  // },
   methods: {
-    fetchData: async function() {
-      try {
-        const res = await fetch(
-          `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
-        )
-        const db = await res.json()
-        this.transactions = db.transactions
-      } catch (e) {
-        console.log(e)
-      }
-    },
+    // DON'T DELETE!!! keep this for the real API !!!
+    // fetchData: async function() {
+    //   try {
+    //     const res = await fetch(
+    //       `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
+    //     )
+    //     const db = await res.json()
+    //     this.transactions = db.transactions
+    //   } catch (e) {
+    //     console.log(e)
+    //   }
+    // },
   },
   components: {
     Transaction,

@@ -2,7 +2,7 @@
   <div>
     <!-- START Balance bit starts here -->
     <h1>Balance</h1>
-    <div v-for="currency in currencies" :key="currency.id" class="container">
+    <div v-for="currency in db_json" :key="currency.id" class="container">
       <!-- result balance aggregate -->
       <b-button
         v-b-toggle="'collapse-1' + currency.id"
@@ -82,34 +82,35 @@
 </template>
 
 <script>
+import json from '../../db.json'
 export default {
   data() {
     return {
-      currencies: {},
+      db_json: json.currencies,
     }
   },
-  created: function() {
-    this.fetchData()
-  },
+  // DON'T DELETE!!! keep this for the real API !!!
+  // created: function() {
+  //   this.fetchData()
+  // },
   methods: {
-    fetchData: async function() {
-      try {
-        const res = await fetch(
-          `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
-          // this.db_json
-        )
-        const db = await res.json()
-        this.currencies = db.currencies
-      } catch (e) {
-        console.log(e)
-      }
-    },
+    // DON'T DELETE!!! keep this for the real API !!!
+    // fetchData: async function() {
+    //   try {
+    //     const res = await fetch(
+    //       `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
+    //     )
+    //     const db = await res.json()
+    //     this.currencies = db.currencies
+    //   } catch (e) {
+    //     console.log(e)
+    //   }
+    // },
   },
 }
 </script>
 
 <style scoped>
-
 /* .container{
 
 } */
