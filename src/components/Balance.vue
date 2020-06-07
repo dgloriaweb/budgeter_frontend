@@ -6,7 +6,7 @@
       <!-- result balance aggregate -->
       <b-button
         v-b-toggle="'collapse-1' + currency.id"
-        variant="primary"
+        variant="outline-primary"
         class="currency-button"
       >
         <div class="grid-container-balance">
