@@ -4,15 +4,40 @@
 
     <h1>Transactions</h1>
 
-    <ul>
-      <li
-        class="list-group-item"
-        v-for="transaction in db_json"
-        :key="transaction.id"
-      >
+    <div
+      class="grid-container"
+      v-for="transaction in db_json"
+      :key="transaction.id"
+    >
+      <div class="grid-item1">
+        {{ transaction.date }}
+      </div>
+
+      <div class="grid-item2">
+        {{ transaction.description }}
+      </div>
+      <div class="grid-item3">
+        {{ transaction.amount | toFloat }}
+      </div>
+      <div class="grid-item4">
+        123456.00
+      </div>
+      
+      <div class="grid-item5">
+
+      <b-icon-pencil-square
+        v-b-toggle="'collapse-1-side' + transaction.id "
+        class="gear"
+      />
+      </div>
+
+      <b-collapse
+        :id="'collapse-1-side' + transaction.id "
+              style="grid-column:1/6;"
+        >
         <Transaction :transaction="transaction" />
-      </li>
-    </ul>
+      </b-collapse>
+    </div>
 
     <!-- END Transaction bit ends here -->
   </div>
@@ -55,11 +80,14 @@ export default {
 </script>
 
 <style scoped>
-.list-group-item {
-  padding: 0.1rem;
-}
-ul {
-  list-style: none;
-  padding-inline-start: 0.1rem;
+/* grid */
+.grid-container {
+  margin: auto;
+  padding: 0.3rem;
+  display: grid;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.2rem;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  max-width: 40rem;
 }
 </style>

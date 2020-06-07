@@ -45,7 +45,7 @@
             </div>
             <b-collapse
               :id="'collapse-1-inner' + currency.id + '-' + account.id_account"
-              style="grid-column:1/6;"
+              style="grid-column:1/5;"
             >
               <div class="grid_item_main_balance_check_button1">
                 <div class="grid-item3">
@@ -116,14 +116,13 @@ export default {
 } */
 .currency-button {
   min-width: 15rem;
-  border:none;
+  border: none;
 }
 
 .collapsed > .when-opened,
 :not(.collapsed) > .when-closed {
   display: none;
 }
-
 
 /* grid */
 .grid-container {
