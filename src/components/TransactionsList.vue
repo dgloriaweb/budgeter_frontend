@@ -6,10 +6,8 @@
     <table class="my-table">
         <tr v-for="transaction in db_json" :key="transaction.id">
           <td style="text-align:left">
-          {{ transaction.date }}
-        </td>
-
-        <td style="text-align:left">
+          <small>{{ transaction.date }}</small>
+        <br/>
           {{ transaction.description }}
         </td>
         <td style="text-align:right">
@@ -94,10 +92,15 @@ export default {
   max-width:30rem;
   margin:auto;
 }
+.my-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
 .my-table td{
   /* border: 1px solid black; */
   max-width:4rem;
-  font-size:0.6rem;
+  font-size:0.8rem;
+  vertical-align:top;
+  padding-bottom:1rem;
 }
 </style>
