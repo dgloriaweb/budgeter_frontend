@@ -25,9 +25,9 @@
       
       <div class="grid-item5">
 
-      <b-icon-pencil-square
+      <b-icon-eye
         v-b-toggle="'collapse-1-side' + transaction.id "
-        class="gear"
+        class="eye"
       />
       </div>
 
