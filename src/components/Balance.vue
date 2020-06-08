@@ -25,52 +25,42 @@
         </span>
       </b-button>
       <!-- grid accounts collapse/expand -->
-      <div
-        v-for="account in currency.accounts"
-        :key="account.id_account"
-        class="container"
-      >
-        <b-collapse
-          :id="'collapse-1' + currency.id"
-          class="mt-2 accounts-collapse"
+      <div class="grid-container-accounts p-2">
+        <div
+          class="grid-item-accounts"
+          v-for="account in currency.accounts"
+          :key="account.id_account"
         >
-          <div class="grid-container">
-            <div class="grid-item1">{{ account.acc_nick }}</div>
-            <div class="grid-item2">{{ account.acc_type }}</div>
-            <div class="grid_item_amount">
-              {{ account.amount | toFloat }}
-            </div>
+          <b-collapse
+            :id="'collapse-1' + currency.id"
+            class="mt-2 accounts-collapse"
+          >
+            <div>{{ account.acc_nick }}</div>
+            <div>{{ account.acc_type }}</div>
 
-            <div class="grid-item4">
-              Account number: {{ account.acc_number }}
-            </div>
+            <div>Account number: {{ account.acc_number }}</div>
 
-            <div class="grid-item5">
-              <div class="grid_item_main_balance_check_button1">
-                <b-form-checkbox
-                  v-model="account.show_in_main_balance"
-                  name="account.show_in_main_balance"
-                  switch
-                  size="sm"
-                >
-                  show in main balance
-                </b-form-checkbox>
-              </div>
+            <b-form-checkbox
+              v-model="account.show_in_main_balance"
+              name="account.show_in_main_balance"
+              switch
+              size="sm"
+            >
+              show in main balance
+            </b-form-checkbox>
+            <b-form-checkbox
+              v-model="account.show_in_transactions_balance"
+              name="account.show_in_transactions_balance"
+              switch
+              size="sm"
+            >
+              show in transactions balance
+            </b-form-checkbox>
+            <div class="amount">
+              <strong>Balance: {{ account.amount | toFloat }}</strong>
             </div>
-            <div class="grid-item6">
-              <div class="grid_item_transactions_balance_check_button1">
-                <b-form-checkbox
-                  v-model="account.show_in_transactions_balance"
-                  name="account.show_in_transactions_balance"
-                  switch
-                  size="sm"
-                >
-                  show in transactions balance
-                </b-form-checkbox>
-              </div>
-            </div>
-          </div>
-        </b-collapse>
+          </b-collapse>
+        </div>
       </div>
       <!-- currency list aggregate end -->
     </div>
@@ -131,27 +121,23 @@ export default {
 .grid-item-balance2 {
   text-align: right;
 }
-/* grid accounts */
-.grid-container {
+/* grid accounts outer for desktop*/
+.grid-container-accounts {
   margin: auto;
-  padding: 0.3rem;
   display: grid;
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 0.2rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  text-align: left;
-  max-width: 40rem;
+  grid-column-gap: 1rem;
+  grid-row-gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax( 17rem, 1fr));
+  max-width: 65rem;
   padding-bottom: 1rem;
-  font-size: 0.7rem;
-  max-width: 30rem;
-  /* border: 1px solid black; */
+  /* border: 1px dotted #333; */
 }
-.grid-container > div {
-  /* border: 1px solid black; */
-  border: none;
+.grid-item-accounts {
+  margin:auto;
+  max-width: 90%;
+  /* border: 1px dotted #333; */
 }
-.grid_item_amount {
+.amount {
   text-align: right;
 }
-
 </style>
