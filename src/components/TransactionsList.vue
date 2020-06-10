@@ -40,33 +40,34 @@
 
 <script>
 import Transaction from './Transaction.vue'
-import json from '../../db.json'
+// import json from '../../db.json'
 
 export default {
   name: 'TransactionsList',
   data() {
     return {
-      db_json: json.computed_transactions,
+      // db_json: json.computed_transactions,
       transactions: [],
     }
   },
   // DON'T DELETE!!! keep this for the real API !!!
-  // created: function() {
-  //   this.fetchData()
-  // },
+  created: function() {
+    this.fetchData()
+  },
   methods: {
     // DON'T DELETE!!! keep this for the real API !!!
-    // fetchData: async function() {
-    //   try {
-    //     const res = await fetch(
-    //       `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
-    //     )
-    //     const db = await res.json()
-    //     this.transactions = db.transactions
-    //   } catch (e) {
-    //     console.log(e)
-    //   }
-    // },
+    fetchData: async function() {
+      try {
+        const res = await fetch(
+          // `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
+          `http://babiwes.com/budgeter/public/api/accounts`
+        )
+        const db = await res.json()
+        this.transactions = db.transactions
+      } catch (e) {
+        console.log(e)
+      }
+    },
   },
   components: {
     Transaction,

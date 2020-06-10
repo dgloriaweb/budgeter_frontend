@@ -1,9 +1,8 @@
 <template>
   <div>
-    <!-- START Balance bit starts here -->
     <h1>Balance</h1>
-    <div v-for="currency in db_json" :key="currency.id" git add>
-      <!-- result balance aggregate -->
+    <div v-for="currency in currencies" :key="currency.id" git add>
+      <!-- result balance sum per currency -->
       <b-button
         v-b-toggle="'collapse-1' + currency.id"
         variant="outline-primary"
@@ -37,9 +36,7 @@
           >
             <div>{{ account.acc_nick }}</div>
             <div>{{ account.acc_type }}</div>
-
             <div>Account number: {{ account.acc_number }}</div>
-
             <b-form-checkbox
               v-model="account.show_in_main_balance"
               name="account.show_in_main_balance"
@@ -62,37 +59,38 @@
           </b-collapse>
         </div>
       </div>
-      <!-- currency list aggregate end -->
+      <!-- account list end -->
     </div>
-    <!-- END Balance bit ends here -->
   </div>
 </template>
 
 <script>
-import json from '../../db.json'
+// import json from '../../db.json'
 export default {
   data() {
     return {
-      db_json: json.currencies,
+      currencies: []
+      // currencies: json.currencies,
     }
   },
   // DON'T DELETE!!! keep this for the real API !!!
-  // created: function() {
-  //   this.fetchData()
-  // },
+  created: function() {
+    this.fetchData()
+  },
   methods: {
     // DON'T DELETE!!! keep this for the real API !!!
-    // fetchData: async function() {
-    //   try {
-    //     const res = await fetch(
-    //       `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
-    //     )
-    //     const db = await res.json()
-    //     this.currencies = db.currencies
-    //   } catch (e) {
-    //     console.log(e)
-    //   }
-    // },
+    fetchData: async function() {
+      try {
+        const res = await fetch(
+          // `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
+          `http://babiwes.com/budgeter/public/api/accounts`
+        )
+        const db = await res.json()
+        this.currencies = db.currencies
+      } catch (e) {
+        console.log(e)
+      }
+    },
   },
 }
 </script>
@@ -127,13 +125,13 @@ export default {
   display: grid;
   grid-column-gap: 1rem;
   grid-row-gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax( 17rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   max-width: 65rem;
   padding-bottom: 1rem;
   /* border: 1px dotted #333; */
 }
 .grid-item-accounts {
-  margin:auto;
+  margin: auto;
   max-width: 90%;
   /* border: 1px dotted #333; */
 }
