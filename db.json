@@ -2,7 +2,6 @@
   "currencies": [
     {
       "id": 1,
-      "checkbox_test": true,
       "code": "GBP",
       "balance": 1346.57,
       "accounts": [
@@ -40,7 +39,6 @@
     },
     {
       "id": 2,
-      "checkbox_test": false,
       "code": "HUF",
       "balance": 14262.0,
       "accounts": [
