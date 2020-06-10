@@ -83,7 +83,7 @@ export default {
       try {
         const res = await fetch(
           // `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
-          `http://babiwes.com/budgeter/public/api/accounts`
+          `https://babiwes.com/budgeter/public/api/accounts`
         )
         const db = await res.json()
         this.currencies = db.currencies
