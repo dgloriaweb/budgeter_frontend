@@ -10,7 +10,7 @@
       >
         <div class="grid-container-balance">
           <div class="grid-item-balance1">
-            {{ currency.currency_code_id }}
+            {{ currency.currency_code }}
           </div>
           <div class="grid-item-balance2">
             {{ currency.sum | toFloat }}
