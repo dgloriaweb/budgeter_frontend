@@ -4,7 +4,7 @@
 
     <h1>Transactions</h1>
     <table class="my-table">
-        <tr v-for="transaction in db_json" :key="transaction.id">
+        <tr v-for="transaction in transactions" :key="transaction.id">
           <td style="text-align:left">
           <small>{{ transaction.date }}</small>
         <br/>
