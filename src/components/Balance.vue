@@ -10,10 +10,10 @@
       >
         <div class="grid-container-balance">
           <div class="grid-item-balance1">
-            {{ currency.code }}
+            {{ currency.currency_code_id }}
           </div>
           <div class="grid-item-balance2">
-            {{ currency.balance | toFloat }}
+            {{ currency.sum | toFloat }}
           </div>
         </div>
         <span class="when-opened">
@@ -28,15 +28,14 @@
         <div
           class="grid-item-accounts"
           v-for="account in currency.accounts"
-          :key="account.id_account"
+          :key="account.id"
         >
           <b-collapse
             :id="'collapse-1' + currency.id"
             class="mt-2 accounts-collapse"
           >
-            <div>{{ account.acc_nick }}</div>
-            <div>{{ account.acc_type }}</div>
-            <div>Account number: {{ account.acc_number }}</div>
+            <div>{{ account.account_nick }}</div>
+            <div>{{ account.account_type_id }}</div>
             <b-form-checkbox
               v-model="account.show_in_main_balance"
               name="account.show_in_main_balance"

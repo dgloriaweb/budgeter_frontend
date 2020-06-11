@@ -6,31 +6,28 @@
       "balance": 1346.57,
       "accounts": [
         {
-          "id_account": 1,
+          "id": 1,
           "bank": "HSBC",
-          "acc_nick": "HSBC A1",
-          "acc_type": "current account",
-          "acc_number": "12345675",
+          "account_nick": "HSBC A1",
+          "account_type_id": "current account",
           "amount": 86.57,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         },
         {
-          "id_account": 2,
+          "id": 2,
           "bank": "HSBC",
-          "acc_nick": "HSBC A2",
-          "acc_type": "savings account",
-          "acc_number": "15436254",
+          "account_nick": "HSBC A2",
+          "account_type_id": "savings account",
           "amount": 1240.0,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         },
         {
-          "id_account": 3,
+          "id": 3,
           "bank": "HSBC",
-          "acc_nick": "HSBC L1",
-          "acc_type": "personal loan",
-          "acc_number": "1468451556",
+          "account_nick": "HSBC L1",
+          "account_type_id": "personal loan",
           "amount": 1720.0,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
@@ -43,21 +40,19 @@
       "balance": 14262.0,
       "accounts": [
         {
-          "id_account": 1,
+          "id": 1,
           "bank": "K&H",
-          "acc_nick": "K&H A1",
-          "acc_type": "current account",
-          "acc_number": "931100180809",
+          "account_nick": "K&H A1",
+          "account_type_id": "current account",
           "amount": 14250.0,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
         },
         {
-          "id_account": 2,
+          "id": 2,
           "bank": "K&H",
-          "acc_nick": "K&H A2",
-          "acc_type": "current account",
-          "acc_number": "5881235863513",
+          "account_nick": "K&H A2",
+          "account_type_id": "current account",
           "amount": 12,
           "show_in_main_balance": 1,
           "show_in_transactions_balance": 1
