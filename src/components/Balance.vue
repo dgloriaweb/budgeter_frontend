@@ -9,12 +9,8 @@
         class="currency-button"
       >
         <div class="grid-container-balance">
-          <div class="grid-item-balance1">
-            {{ currency.currency_code }}
-          </div>
-          <div class="grid-item-balance2">
-            {{ currency.sum | toFloat }}
-          </div>
+          <div class="grid-item-balance1">{{ currency.currency_code }}</div>
+          <div class="grid-item-balance2">{{ currency.sum | toFloat }}</div>
         </div>
         <span class="when-opened">
           <b-icon-caret-up class="b-icon"></b-icon-caret-up>
@@ -25,35 +21,25 @@
       </b-button>
       <!-- grid accounts collapse/expand -->
       <div class="grid-container-accounts p-2">
-        <div
-          class="grid-item-accounts"
-          v-for="account in currency.accounts"
-          :key="account.id"
-        >
-          <b-collapse
-            :id="'collapse-1' + currency.id"
-            class="mt-2 accounts-collapse"
-          >
+        <div class="grid-item-accounts" v-for="account in currency.accounts" :key="account.id">
+          <b-collapse :id="'collapse-1' + currency.id" class="mt-2 accounts-collapse">
             <div>{{ account.account_nick }}</div>
             <div>{{ account.account_type_id }}</div>
+
             <b-form-checkbox
-              v-model="account.show_in_main_balance"
+              :checked="!!account.show_in_main_balance"
               name="account.show_in_main_balance"
               switch
               size="sm"
-            >
-              show in main balance
-            </b-form-checkbox>
+            >show in main balance</b-form-checkbox>
             <b-form-checkbox
-              v-model="account.show_in_transactions_balance"
+              :checked="!!account.show_in_transactions_balance"
               name="account.show_in_transactions_balance"
               switch
               size="sm"
-            >
-              show in transactions balance
-            </b-form-checkbox>
+            >show in transactions balance</b-form-checkbox>
             <div class="amount">
-              <strong>Balance: {{ account.amount | toFloat }}</strong>
+              <strong>Balance: {{ account.balance.amount | toFloat }}</strong>
             </div>
           </b-collapse>
         </div>
@@ -64,17 +50,17 @@
 </template>
 
 <script>
- //import json from '../../db.json'
+//import json from '../../db.json'
 export default {
   data() {
     return {
       account_groups: []
       // account_groups: json.account_groups,
-    }
+    };
   },
   // DON'T DELETE!!! keep this for the real API !!!
   created: function() {
-    this.fetchData()
+    this.fetchData();
   },
   methods: {
     // DON'T DELETE!!! keep this for the real API !!!
@@ -83,15 +69,15 @@ export default {
         const res = await fetch(
           // `https://babiwes.com/budgeter/public/api/accounts`
           `http://localhost/budgeter_api_v1/public/api/accounts`
-        )
-        const db = await res.json()
-        this.account_groups = db.account_groups
+        );
+        const db = await res.json();
+        this.account_groups = db.account_groups;
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
-    },
-  },
-}
+    }
+  }
+};
 </script>
 
 <style scoped>
