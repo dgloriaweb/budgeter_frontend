@@ -21,7 +21,7 @@
       </b-button>
       <!-- grid accounts collapse/expand -->
       <div class="grid-container-accounts p-2">
-        <div class="grid-item-accounts" v-for="account in currency.accounts" :key="account.id">
+        <div class="grid-item-accounts" v-for="account in currency.accounts" :key="account.id" id="accounts">
           <b-collapse :id="'collapse-1' + currency.id" class="mt-2 accounts-collapse">
             <div>{{ account.account_nick }}</div>
             <div>{{ account.account_type_id }}</div>
@@ -31,12 +31,14 @@
               name="account.show_in_main_balance"
               switch
               size="sm"
+              @change="check_show_in_main_balance($event)"
             >show in main balance</b-form-checkbox>
             <b-form-checkbox
               :checked="!!account.show_in_transactions_balance"
               name="account.show_in_transactions_balance"
               switch
               size="sm"
+              @change="check_show_in_transactions_balance($event)"
             >show in transactions balance</b-form-checkbox>
             <div class="amount">
               <strong>Balance: {{ account.balance.amount | toFloat }}</strong>
@@ -52,6 +54,7 @@
 <script>
 //import json from '../../db.json'
 export default {
+  el: '#accounts',
   data() {
     return {
       account_groups: []
@@ -75,6 +78,15 @@ export default {
       } catch (e) {
         console.log(e);
       }
+    },
+    
+    check_show_in_main_balance: function(e) {
+    console.log('status of show_in_main_balance is :' +e)
+    //grip this in a controller
+    },
+
+    check_show_in_transactions_balance:function(e){
+      console.log(e)
     }
   }
 };
