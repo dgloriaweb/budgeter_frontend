@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Balance</h1>
-    <div v-for="currency in currencies" :key="currency.id" git add>
+    <div v-for="currency in account_groups" :key="currency.id" git add>
       <!-- result balance sum per currency -->
       <b-button
         v-b-toggle="'collapse-1' + currency.id"
@@ -64,12 +64,12 @@
 </template>
 
 <script>
-// import json from '../../db.json'
+ //import json from '../../db.json'
 export default {
   data() {
     return {
-      currencies: []
-      // currencies: json.currencies,
+      account_groups: []
+      // account_groups: json.account_groups,
     }
   },
   // DON'T DELETE!!! keep this for the real API !!!
@@ -81,11 +81,11 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          // `https://my-json-server.typicode.com/dgloriaweb/budgeter_frontend/db`
-          `https://babiwes.com/budgeter/public/api/accounts`
+          // `https://babiwes.com/budgeter/public/api/accounts`
+          `http://localhost/budgeter_api_v1/public/api/accounts`
         )
         const db = await res.json()
-        this.currencies = db.currencies
+        this.account_groups = db.account_groups
       } catch (e) {
         console.log(e)
       }

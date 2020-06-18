@@ -1,5 +1,5 @@
 {
-  "currencies": [
+  "account_groups": [
     {
       "id": 1,
       "code": "GBP",
