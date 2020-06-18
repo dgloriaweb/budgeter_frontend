@@ -21,7 +21,7 @@
       </b-button>
       <!-- grid accounts collapse/expand -->
       <div class="grid-container-accounts p-2">
-        <div class="grid-item-accounts" v-for="account in currency.accounts" :key="account.id" id="accounts">
+        <div class="grid-item-accounts" v-for="account in currency.accounts" :key="account.id">
           <b-collapse :id="'collapse-1' + currency.id" class="mt-2 accounts-collapse">
             <div>{{ account.account_nick }}</div>
             <div>{{ account.account_type_id }}</div>
@@ -31,7 +31,7 @@
               name="account.show_in_main_balance"
               switch
               size="sm"
-              @change="check_show_in_main_balance($event)"
+              @change="check_show_in_main_balance(account.id,$event)"
             >show in main balance</b-form-checkbox>
             <b-form-checkbox
               :checked="!!account.show_in_transactions_balance"
@@ -54,7 +54,6 @@
 <script>
 //import json from '../../db.json'
 export default {
-  el: '#accounts',
   data() {
     return {
       account_groups: []
@@ -80,9 +79,13 @@ export default {
       }
     },
     
-    check_show_in_main_balance: function(e) {
-    console.log('status of show_in_main_balance is :' +e)
-    //grip this in a controller
+    check_show_in_main_balance: function($account_id,e) {
+      //grip this in a controller
+
+     var post_url = 'http://localhost/budgeter_api_v1/public/api/accounts/'+$account_id;
+    // console.log('status of show_in_main_balance of '+ $account_id +' account id is :' +e)
+    console.log(post_url, e)
+
     },
 
     check_show_in_transactions_balance:function(e){
