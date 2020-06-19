@@ -97,7 +97,8 @@ export default {
         body: JSON.stringify(data),
         method: "PUT",
         headers: {
-          "Content-type": "application/json"
+          Accept: "application/json",
+          "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
         },
       });
     },
@@ -114,8 +115,9 @@ export default {
         body: JSON.stringify(data),
         method: "PUT",
         headers: {
-          "Content-type": "application/json"
-        },
+          Accept: "application/json",
+          "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+       },
       });
     },
   }
