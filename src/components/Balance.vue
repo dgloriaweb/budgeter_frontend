@@ -52,12 +52,10 @@
 </template>
 
 <script>
-//import json from '../../db.json'
 export default {
   data() {
     return {
       account_groups: []
-      // account_groups: json.account_groups,
     };
   },
   // DON'T DELETE!!! keep this for the real API !!!
