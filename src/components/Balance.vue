@@ -53,8 +53,8 @@
 
 <script>
 //import json from '../../db.json'
-  const api_url = 'https://babiwes.com/budgeter/public/api/accounts';
-  // const api_url = 'http://localhost/budgeter_api_v1/public/api/accounts';
+  const api_url = 'https://babiwes.com/budgeter/public/api/accounts/';
+  // const api_url = 'http://localhost/budgeter_api_v1/public/api/accounts/';
 export default {
   data() {
     return {
