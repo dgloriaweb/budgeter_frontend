@@ -48,6 +48,7 @@
       </div>
       <!-- account list end -->
     </div>
+    @cors
   </div>
 </template>
 
