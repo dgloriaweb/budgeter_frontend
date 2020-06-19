@@ -38,7 +38,7 @@
               name="account.show_in_transactions_balance"
               switch
               size="sm"
-              @change="check_show_in_transactions_balance($event)"
+              @change="check_show_in_transactions_balance(account.id,$event)"
             >show in transactions balance</b-form-checkbox>
             <div class="amount">
               <strong>Balance: {{ account.balance.amount | toFloat }}</strong>
@@ -102,9 +102,22 @@ export default {
       });
     },
 
-    check_show_in_transactions_balance: function(e) {
-      console.log(e);
-    }
+    check_show_in_transactions_balance:  function($account_id, e) {
+      var post_url =
+        "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
+      const data = {
+        id: $account_id,
+        fieldname: "show_in_transactions_balance",
+        fieldvalue: e
+      };
+      fetch(post_url, {
+        body: JSON.stringify(data),
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json"
+        },
+      });
+    },
   }
 };
 </script>
