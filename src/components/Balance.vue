@@ -69,8 +69,8 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          `https://babiwes.com/budgeter/public/api/accounts`
           // `http://localhost/budgeter_api_v1/public/api/accounts`
+          `https://babiwes.com/budgeter/public/api/accounts`
         );
         const db = await res.json();
         this.account_groups = db.account_groups;
@@ -82,7 +82,7 @@ export default {
     check_show_in_main_balance: function($account_id, e) {
       var post_url =
         // "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
-        "https://babiwes.com/budgeter/public/api/accounts"+"/" + $account_id;
+        "https://babiwes.com/budgeter/public/api/accounts" + "/" + $account_id;
       const data = {
         id: $account_id,
         fieldname: "show_in_main_balance",
@@ -98,16 +98,15 @@ export default {
         body: JSON.stringify(data),
         method: "PUT",
         headers: {
-          Accept: "application/json",
-          "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-        },
+          "Content-type": "application/json"
+        }
       });
     },
 
-    check_show_in_transactions_balance:  function($account_id, e) {
+    check_show_in_transactions_balance: function($account_id, e) {
       var post_url =
         // "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
-        "https://babiwes.com/budgeter/public/api/accounts"+"/" + $account_id;
+        "https://babiwes.com/budgeter/public/api/accounts" + "/" + $account_id;
       const data = {
         id: $account_id,
         fieldname: "show_in_transactions_balance",
@@ -117,11 +116,10 @@ export default {
         body: JSON.stringify(data),
         method: "PUT",
         headers: {
-          Accept: "application/json",
           "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-       },
+        }
       });
-    },
+    }
   }
 };
 </script>
