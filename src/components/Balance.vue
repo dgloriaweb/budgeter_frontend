@@ -53,6 +53,8 @@
 
 <script>
 //import json from '../../db.json'
+  const api_url = 'https://babiwes.com/budgeter/public/api/accounts';
+  // const api_url = 'http://localhost/budgeter_api_v1/public/api/accounts';
 export default {
   data() {
     return {
@@ -69,8 +71,7 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          `https://babiwes.com/budgeter/public/api/accounts`
-          // `http://localhost/budgeter_api_v1/public/api/accounts`
+          api_url          
         );
         const db = await res.json();
         this.account_groups = db.account_groups;
@@ -80,20 +81,19 @@ export default {
     },
 
     check_show_in_main_balance: function($account_id, e) {
-      var post_url =
-        "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
+      var api_url_with_id =        api_url + $account_id;
       const data = {
         id: $account_id,
         fieldname: "show_in_main_balance",
         fieldvalue: e
       };
       // old code not working
-      // this.$http.patch(post_url, data, {
+      // this.$http.patch(api_url, data, {
       //   headers: {
       //     Accept: "application/json",
       //     "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
       // },
-      fetch(post_url, {
+      fetch(api_url_with_id, {
         body: JSON.stringify(data),
         method: "PUT",
         headers: {
@@ -103,14 +103,13 @@ export default {
     },
 
     check_show_in_transactions_balance:  function($account_id, e) {
-      var post_url =
-        "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
+      var api_url_with_id =api_url + $account_id;
       const data = {
         id: $account_id,
         fieldname: "show_in_transactions_balance",
         fieldvalue: e
       };
-      fetch(post_url, {
+      fetch(api_url_with_id, {
         body: JSON.stringify(data),
         method: "PUT",
         headers: {
