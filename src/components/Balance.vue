@@ -81,7 +81,8 @@ export default {
 
     check_show_in_main_balance: function($account_id, e) {
       var post_url =
-        "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
+        // "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
+        "https://babiwes.com/budgeter/public/api/accounts"+"/" + $account_id;
       const data = {
         id: $account_id,
         fieldname: "show_in_main_balance",
@@ -105,7 +106,8 @@ export default {
 
     check_show_in_transactions_balance:  function($account_id, e) {
       var post_url =
-        "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
+        // "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
+        "https://babiwes.com/budgeter/public/api/accounts"+"/" + $account_id;
       const data = {
         id: $account_id,
         fieldname: "show_in_transactions_balance",
