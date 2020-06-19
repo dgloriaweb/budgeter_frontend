@@ -78,18 +78,32 @@ export default {
         console.log(e);
       }
     },
-    
-    check_show_in_main_balance: function($account_id,e) {
-      //grip this in a controller
 
-     var post_url = 'http://localhost/budgeter_api_v1/public/api/accounts/'+$account_id;
-    // console.log('status of show_in_main_balance of '+ $account_id +' account id is :' +e)
-    console.log(post_url, e)
-
+    check_show_in_main_balance: function($account_id, e) {
+      var post_url =
+        "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
+      const data = {
+        id: $account_id,
+        fieldname: "show_in_main_balance",
+        fieldvalue: e
+      };
+      // old code not working
+      // this.$http.patch(post_url, data, {
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      // },
+      fetch(post_url, {
+        body: JSON.stringify(data),
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json"
+        },
+      });
     },
 
-    check_show_in_transactions_balance:function(e){
-      console.log(e)
+    check_show_in_transactions_balance: function(e) {
+      console.log(e);
     }
   }
 };
