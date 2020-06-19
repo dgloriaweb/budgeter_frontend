@@ -69,8 +69,8 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          // `https://babiwes.com/budgeter/public/api/accounts`
-          `http://localhost/budgeter_api_v1/public/api/accounts`
+          `https://babiwes.com/budgeter/public/api/accounts`
+          // `http://localhost/budgeter_api_v1/public/api/accounts`
         );
         const db = await res.json();
         this.account_groups = db.account_groups;
