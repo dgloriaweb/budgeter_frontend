@@ -52,6 +52,11 @@
 </template>
 
 <script>
+//local server api
+//const api_url = "http://localhost/budgeter_api_v1/public/api/accounts";
+
+//live server api
+const api_url = "https://babiwes.com/budgeter/public/api/accounts";
 export default {
   data() {
     return {
@@ -64,11 +69,13 @@ export default {
   },
   methods: {
     // DON'T DELETE!!! keep this for the real API !!!
+    // get the accounts list from the api
     fetchData: async function() {
       try {
         const res = await fetch(
           // `http://localhost/budgeter_api_v1/public/api/accounts`
-          `https://babiwes.com/budgeter/public/api/accounts`
+          // `https://babiwes.com/budgeter/public/api/accounts`
+          api_url
         );
         const db = await res.json();
         this.account_groups = db.account_groups;
@@ -79,19 +86,12 @@ export default {
 
     check_show_in_main_balance: function($account_id, e) {
       var post_url =
-        // "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
-        "https://babiwes.com/budgeter/public/api/accounts" + "/" + $account_id;
+        api_url + "/" + $account_id;
       const data = {
         id: $account_id,
         fieldname: "show_in_main_balance",
         fieldvalue: e
       };
-      // old code not working
-      // this.$http.patch(post_url, data, {
-      //   headers: {
-      //     Accept: "application/json",
-      //     "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-      // },
       fetch(post_url, {
         body: JSON.stringify(data),
         method: "PUT",
@@ -103,8 +103,7 @@ export default {
 
     check_show_in_transactions_balance: function($account_id, e) {
       var post_url =
-        // "http://localhost/budgeter_api_v1/public/api/accounts/" + $account_id;
-        "https://babiwes.com/budgeter/public/api/accounts" + "/" + $account_id;
+        api_url + "/" + $account_id;
       const data = {
         id: $account_id,
         fieldname: "show_in_transactions_balance",
@@ -114,7 +113,7 @@ export default {
         body: JSON.stringify(data),
         method: "PUT",
         headers: {
-          "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+          "Content-type": "application/json"
         }
       });
     }
