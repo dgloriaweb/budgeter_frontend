@@ -1,16 +1,16 @@
 <template>
   <div>
     <h1>Balance</h1>
-    <div v-for="currency in account_groups" :key="currency.id" git add>
-      <!-- result balance sum per currency -->
+    <div v-for="account_group in account_groups" :key="account_group.id" git add>
+      <!-- result balance sum per account_group -->
       <b-button
-        v-b-toggle="'collapse-1' + currency.id"
+        v-b-toggle="'collapse-1' + account_group.id"
         variant="outline-primary"
-        class="currency-button"
+        class="account_group-button"
       >
         <div class="grid-container-balance">
-          <div class="grid-item-balance1">{{ currency.currency_code }}</div>
-          <div class="grid-item-balance2">{{ currency.sum | toFloat }}</div>
+          <div class="grid-item-balance1">{{ account_group.currency_code }}</div>
+          <div class="grid-item-balance2">{{ account_group.sum | toFloat }}</div>
         </div>
         <span class="when-opened">
           <b-icon-caret-up class="b-icon"></b-icon-caret-up>
@@ -21,8 +21,8 @@
       </b-button>
       <!-- grid accounts collapse/expand -->
       <div class="grid-container-accounts p-2">
-        <div class="grid-item-accounts" v-for="account in currency.accounts" :key="account.id">
-          <b-collapse :id="'collapse-1' + currency.id" class="mt-2 accounts-collapse">
+        <div class="grid-item-accounts" v-for="account in account_group.accounts" :key="account.id">
+          <b-collapse :id="'collapse-1' + account_group.id" class="mt-2 accounts-collapse">
             <div>{{ account.account_nick }}</div>
             <div>{{ account.account_type_id }}</div>
 
@@ -99,6 +99,7 @@ export default {
           "Content-type": "application/json"
         }
       });
+      
     },
 
     check_show_in_transactions_balance: function($account_id, e) {
@@ -125,7 +126,7 @@ export default {
 .b-icon {
   font-size: 2rem;
 }
-.currency-button {
+.account_group-button {
   min-width: 15rem;
   border: none;
 }
