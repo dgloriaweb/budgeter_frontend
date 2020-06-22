@@ -92,12 +92,12 @@ export default {
       }
     },
 
-    checkbox_modified: function(account_id,name, e) {
+    checkbox_modified: function(account_id,chk_name, e) {
       var post_url =
         accounts_api_url + "/" + account_id;
       const data = {
         id: account_id,
-        fieldname: name,
+        fieldname: chk_name,
         fieldvalue: e
       };
       fetch(post_url, {
