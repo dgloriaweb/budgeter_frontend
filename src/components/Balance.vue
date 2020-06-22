@@ -41,7 +41,8 @@
               @change="checkbox_modified(account.id,'show_in_transactions_balance',$event)"
             >show in transactions balance</b-form-checkbox>
             <div class="amount">
-              <strong>Balance: {{ account.balance.amount | toFloat }}</strong>
+              <label for="balance">Balance:</label>
+              <input type="text" v-model="account.balance.amount" @blur="edit_amount(account.id,$event)" />
             </div>
           </b-collapse>
         </div>
@@ -71,6 +72,7 @@ export default {
       account_groups: []
     };
   },
+  
   // DON'T DELETE!!! keep this for the real API !!!
   created: function() {
     this.fetchData();
@@ -92,12 +94,12 @@ export default {
       }
     },
 
-    //does this require validation? 
-    checkbox_modified: function(account_id, chk_name, e) {
+    //does this require validation?
+    checkbox_modified: function(account_id, chk_name, event) {
       if (typeof e !== "undefined") {
         var post_url = accounts_api_url + "/" + account_id;
         const data = {
-          [chk_name]: e
+          [chk_name]: event
         };
 
         fetch(post_url, {
@@ -107,9 +109,28 @@ export default {
             "Content-type": "application/json"
           }
         });
-        console.log(data);
+        console.log(event);
+      }
+    },
+    edit_amount: function(account_id,event){
+      if(typeof account_id !== "undefined"){
+        //set the amount for this account
+        var post_url = accounts_api_url + "/" + account_id;
+        const data = {
+          "amount": event.target.value
+        };
+
+        fetch(post_url, {
+          body: JSON.stringify(data),
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json"
+          }
+        });
+        console.log(event);
       }
     }
+
   }
 };
 </script>
@@ -120,7 +141,7 @@ export default {
 }
 .account_group-button {
   min-width: 15rem;
-  border: none;
+  border: 0.2rem 0.2rem 0 0;
 }
 
 .collapsed > .when-opened,
@@ -156,5 +177,9 @@ export default {
 }
 .amount {
   text-align: right;
+}
+.btn-outline {
+  padding: 0.1rem;
+  color: #20c997;
 }
 </style>
