@@ -31,14 +31,14 @@
               name="account.show_in_main_balance"
               switch
               size="sm"
-              @change="check_show_in_main_balance(account.id,$event)"
+              @change="checkbox_modified(account.id,'show_in_main_balance',$event)"
             >show in main balance</b-form-checkbox>
             <b-form-checkbox
               :checked="!!account.show_in_transactions_balance"
               name="account.show_in_transactions_balance"
               switch
               size="sm"
-              @change="check_show_in_transactions_balance(account.id,$event)"
+              @change="checkbox_modified(account.id,'show_in_transactions_balance',$event)"
             >show in transactions balance</b-form-checkbox>
             <div class="amount">
               <strong>Balance: {{ account.balance.amount | toFloat }}</strong>
@@ -92,12 +92,12 @@ export default {
       }
     },
 
-    check_show_in_main_balance: function($account_id, e) {
+    checkbox_modified: function(account_id,name, e) {
       var post_url =
-        accounts_api_url + "/" + $account_id;
+        accounts_api_url + "/" + account_id;
       const data = {
-        id: $account_id,
-        fieldname: "show_in_main_balance",
+        id: account_id,
+        fieldname: name,
         fieldvalue: e
       };
       fetch(post_url, {
@@ -107,26 +107,10 @@ export default {
           "Content-type": "application/json"
         }
       });
+      console.log(name);
       
     },
-
-    check_show_in_transactions_balance: function($account_id, e) {
-      var post_url =
-        accounts_api_url + "/" + $account_id;
-      const data = {
-        id: $account_id,
-        fieldname: "show_in_transactions_balance",
-        fieldvalue: e
-      };
-      fetch(post_url, {
-        body: JSON.stringify(data),
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json"
-        }
-      });
-    }
-  }
+   }
 };
 </script>
 
