@@ -92,20 +92,23 @@ export default {
       }
     },
 
+    //does this require validation? 
     checkbox_modified: function(account_id, chk_name, e) {
-      var post_url = accounts_api_url + "/" + account_id;
-      const data = {
-        [chk_name]: e
-      };
+      if (typeof e !== "undefined") {
+        var post_url = accounts_api_url + "/" + account_id;
+        const data = {
+          [chk_name]: e
+        };
 
-      fetch(post_url, {
-        body: JSON.stringify(data),
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json"
-        }
-      });
-      console.log(data);
+        fetch(post_url, {
+          body: JSON.stringify(data),
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json"
+          }
+        });
+        console.log(data);
+      }
     }
   }
 };
