@@ -95,7 +95,7 @@ export default {
 
     //does this require validation?
     checkbox_modified: function(account_id, chk_name, event) {
-      if (typeof e !== "undefined") {
+      if (typeof event !== "undefined") {
         var post_url = accounts_api_url + "/" + account_id;
         const data = {
           [chk_name]: event
@@ -108,7 +108,7 @@ export default {
             "Content-type": "application/json"
           }
         });
-        console.log(event);
+        console.log(data);
       }
     },
     edit_amount: function(account_id,event){
