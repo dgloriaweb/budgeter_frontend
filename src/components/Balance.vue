@@ -53,7 +53,8 @@
 
 <script>
 //local server api
-const groups_api_url = "http://localhost/budgeter_api_v1/public/api/account_groups";
+const groups_api_url =
+  "http://localhost/budgeter_api_v1/public/api/account_groups";
 
 //live server api
 // const groups_api_url = "https://babiwes.com/budgeter/public/api/account_groups";
@@ -63,7 +64,6 @@ const accounts_api_url = "http://localhost/budgeter_api_v1/public/api/accounts";
 
 //live server api
 // const accounts_api_url = "https://babiwes.com/budgeter/public/api/accounts";
-
 
 export default {
   data() {
@@ -92,14 +92,12 @@ export default {
       }
     },
 
-    checkbox_modified: function(account_id,chk_name, e) {
-      var post_url =
-        accounts_api_url + "/" + account_id;
+    checkbox_modified: function(account_id, chk_name, e) {
+      var post_url = accounts_api_url + "/" + account_id;
       const data = {
-        id: account_id,
-        fieldname: chk_name,
-        fieldvalue: e
+        [chk_name]: e
       };
+
       fetch(post_url, {
         body: JSON.stringify(data),
         method: "PUT",
@@ -107,10 +105,9 @@ export default {
           "Content-type": "application/json"
         }
       });
-      console.log(name);
-      
-    },
-   }
+      console.log(data);
+    }
+  }
 };
 </script>
 
