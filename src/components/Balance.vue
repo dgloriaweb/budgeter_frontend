@@ -54,8 +54,7 @@
 
 <script>
 //local server api
-const groups_api_url =
-  "http://localhost/budgeter_api_v1/public/api/account_groups";
+const groups_api_url = "http://localhost/budgeter_api_v1/public/api/account_groups";
 
 //live server api
 // const groups_api_url = "https://babiwes.com/budgeter/public/api/account_groups";
