@@ -7,7 +7,11 @@ const store = useStore()
 onMounted(() => {
   store.initialiseComponents()
 })
-
+function logout() {
+  store.logout()
+  store.setLoggedInStatus();
+  route.push('/')
+}
 </script>
 
 <template>
@@ -16,9 +20,16 @@ onMounted(() => {
       <!-- side menu here -->
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <br>
         <RouterLink to="/login">Login</RouterLink>
+        <br>
         <RouterLink to="/register">Register</RouterLink>
-        <RouterLink to="/mileages">Mileages</RouterLink>
+        <br>
+        <RouterLink to="/mileages">Mileages Report</RouterLink>
+        <br>
+        <div @click="logout" v-if="store.isLoggedIn" class="btn btn_secondary">
+        <i class="fa-solid fa-user"></i> Logout
+      </div>
       </nav>
     </div>
   </header>

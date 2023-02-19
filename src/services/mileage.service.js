@@ -1,10 +1,14 @@
 import axios from 'axios'
 import authService from './auth.service'
+import { useStore } from '@/store/index'
+
 
 class MileageService {
-  getMileages = async () => {
+  getMileagesByUser = async (user_id) => {
+    const store = useStore()
+    user_id = store.userId
     try {
-      const url = import.meta.env.VITE_APP_API_URL + '/api/mileages'
+      const url = import.meta.env.VITE_APP_API_URL + '/api/mileages/report/' + user_id
       const response = await axios.get(url, {
         headers: authService.getApiHeaders(),
       })
@@ -31,8 +35,8 @@ class MileageService {
         method: 'post',
         url: url,
         headers: authService.getApiHeaders(),
-        params:{
-            mileage
+        params: {
+          mileage
         }
       })
       return response
@@ -48,7 +52,7 @@ class MileageService {
         method: 'post',
         url: url,
         headers: authService.getApiHeaders(),
-        params:{
+        params: {
           mileage
         }
       })
