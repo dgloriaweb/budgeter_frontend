@@ -20,9 +20,7 @@ export const useMileageStore = defineStore('mileages', {
     setMileagesReport() {
       const store = useStore()
       mileageService.getMileagesByUser(store.userId).then((response) => {
-        console.log(response);
-
-        this.mileages = response.data
+        this.mileages_report = response.data
       })
         .catch((error) => {
           console.log(error)
