@@ -8,7 +8,7 @@ class MileageService {
     const store = useStore()
     user_id = store.userId
     try {
-      const url = import.meta.env.VITE_APP_API_URL + '/api/mileages/report/' + user_id
+      const url = import.meta.env.VITE_APP_API_URL + '/api/mileage_report/' + user_id
       const response = await axios.get(url, {
         headers: authService.getApiHeaders(),
       })

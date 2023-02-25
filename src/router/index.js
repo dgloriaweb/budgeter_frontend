@@ -23,8 +23,8 @@ const router = createRouter({
       component: Register,
     },
     {
-      path: '/mileages',
-      name: 'mileage',
+      path: '/mileage_report',
+      name: 'mileage_report',
       component: MileageReportView
     },
     {
