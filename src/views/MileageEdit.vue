@@ -50,16 +50,17 @@
             <div>Selected: {{ location_id_end }}</div>
         </div>
     </div>
-    <button onclick="store_mileage"></button>
+    <button @click="store_mileage">Create</button>
 
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import mileageService from '@/services/mileage.service'
 
 
 /**
-    @property {object} new_mileage_data
+    @property {array} new_mileage_data
     @property {object} partners
     @property {number} selected_partner
 */
@@ -69,8 +70,8 @@ var new_mileage_data =
 {
     "user_id": 1,
     "date": "2023-02-11",//set this to be the last date by default
-    "opening_mileage": 94655,
-    "closing_mileage": 94658,
+    "opening_mileage": "94655",
+    "closing_mileage": "94658",
     "partner_id": 7,
     "location_id_start": 4,
     "location_id_end": 1,
@@ -97,6 +98,7 @@ var locations = ref({
 
 var selected_partner = ref(null)
 var location_id_start = ref(null)
+var location_id_end = ref(null)
 
 // when user changes the partner in the list, update the object
 // if (selected_partner != new_mileage_data.partner_id) {
