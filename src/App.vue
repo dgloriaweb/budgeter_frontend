@@ -25,6 +25,8 @@ function logout() {
         <br>
         <RouterLink to="/register">Register</RouterLink>
         <br>
+        <RouterLink to="/mileage_edit">Edit Mileages</RouterLink>
+        <br>
         <RouterLink to="/mileage_report">Mileages Report</RouterLink>
         <br>
         <div @click="logout" v-if="store.isLoggedIn" class="btn btn_secondary">

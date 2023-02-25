@@ -45,20 +45,20 @@ class MileageService {
     }
   }
 
-  createMileage = async (mileage) => {
+  setNewMileage = async (new_mileage_data) => {
     try {
-      const url = import.meta.env.VITE_APP_API_URL + '/api/mileages/'
+      const url = import.meta.env.VITE_APP_API_URL + '/api/mileages'
       const response = await axios({
         method: 'post',
         url: url,
         headers: authService.getApiHeaders(),
         params: {
-          mileage
+          new_mileage_data
         }
       })
       return response
     } catch (error) {
-      alert('error in createMileage: '.error)
+      alert('error in setNewMileage: '.error)
     }
   }
 }
