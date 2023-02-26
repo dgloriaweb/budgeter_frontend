@@ -23,8 +23,8 @@
             <label for="selected_partner">Select a Partner</label>
             <br>
             <select name="selected_partner" v-model="new_mileage_data.partner_id">
-                <option v-for="(option, key) in partners" :value="key" :key="key">
-                    {{ option }}
+                <option v-for="(option, key) in partnerStore.partners" :value="option.id" :key="key">
+                    {{ option.partner }}
                 </option>
             </select>
             <div>Selected: {{ selected_partner }}</div>
@@ -51,12 +51,15 @@
         </div>
     </div>
     <button @click="store_mileage">Create</button>
-
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import mileageService from '@/services/mileage.service'
+import { usePartnerStore } from '@/store/partnerstore'
+import { onMounted } from 'vue'
+
+const partnerStore = usePartnerStore()
 
 
 /**
@@ -78,16 +81,7 @@ var new_mileage_data =
     "personal_travel_at_start": 0,
     "personal_travel_at_end": 0
 }
-// use the store here
-var partners = ref({
-    1: 'Amazon Flex',
-    2: 'Amazon Prime',
-    3: 'Uber Eats',
-    4: 'Deliveroo',
-    5: 'Just Eat',
-    6: 'odometer status',
-    7: 'personal trip'
-})
+
 // use the store here too
 var locations = ref({
     1: "Home",
@@ -108,23 +102,26 @@ var location_id_end = ref(null)
 //     new_mileage_data.partner_id = selected_partner
 // }
 
-function store_mileage(){
+function store_mileage() {
     mileageService.setNewMileage(new_mileage_data).then(
-    (response) => {
-     if (response.status != 200) {
-        alert('unhandled error');
-      }
-      else {
-        alert('success');
-      }
-    })
-    .catch(error => {
-      if (error.response.data.errors) {
-        alert(error.response.data.errors);
-      } else {
-        alert('unhandled error');
-      }
-    })
+        (response) => {
+            if (response.status != 200) {
+                alert('unhandled error');
+            }
+            else {
+                alert('success');
+            }
+        })
+        .catch(error => {
+            if (error.response.data.errors) {
+                alert(error.response.data.errors);
+            } else {
+                alert('unhandled error');
+            }
+        })
 
 }
+onMounted(() => {
+    partnerStore.setPartners()
+})
 </script>

@@ -6,10 +6,14 @@ import { useStore } from '@/store/index'
 export const usePartnerStore = defineStore('partners', {
     state: () => ({
         partner: null,
+        partners: null
     }),
     getters: {
         getPartner(state) {
             return state.partner
+        },
+        getPartners(state) {
+            return state.partners
         },
     },
     actions: {
@@ -18,6 +22,16 @@ export const usePartnerStore = defineStore('partners', {
                 .getPartnerDetails(id)
                 .then((response) => {
                     this.partner = response.data
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        },
+        setPartners() {
+            partnerService
+                .getAllPartners()
+                .then((response) => {
+                    this.partners = response.data
                 })
                 .catch((error) => {
                     console.log(error)
