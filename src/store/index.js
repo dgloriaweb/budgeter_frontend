@@ -1,5 +1,5 @@
-import userService from '@/services/user.service'
 import { defineStore } from 'pinia'
+import userService from '@/services/user.service'
 import mileageService from '../services/mileage.service'
 
 // always rename the defineStore because it can cause disambiguity if names are the same
