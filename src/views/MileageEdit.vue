@@ -33,8 +33,8 @@
             <label for="selected_location_start">Select a location start</label>
             <br>
             <select name="selected_location_start" v-model="new_mileage_data.location_id_start">
-                <option v-for="(option, key) in locations" :value="key" :key="key">
-                    {{ option }}
+                <option v-for="(option, key) in locationStore.locations" :value="option.id" :key="key">
+                    {{ option.location_name }}
                 </option>
             </select>
             <div>Selected: {{ location_id_start }}</div>
@@ -43,8 +43,8 @@
             <label for="selected_location_end">Select a location end</label>
             <br>
             <select name="selected_location_end" v-model="new_mileage_data.location_id_end">
-                <option v-for="(option, key) in locations" :value="key" :key="key">
-                    {{ option }}
+                <option v-for="(option, key) in locationStore.locations" :value="option.id" :key="key">
+                    {{ option.location_name }}
                 </option>
             </select>
             <div>Selected: {{ location_id_end }}</div>
@@ -57,9 +57,11 @@
 import { ref } from 'vue';
 import mileageService from '@/services/mileage.service'
 import { usePartnerStore } from '@/store/partnerstore'
+import { useLocationStore } from '@/store/locationstore'
 import { onMounted } from 'vue'
 
 const partnerStore = usePartnerStore()
+const locationStore = useLocationStore()
 
 
 /**
@@ -123,5 +125,6 @@ function store_mileage() {
 }
 onMounted(() => {
     partnerStore.setPartners()
+    locationStore.setLocations()
 })
 </script>
