@@ -3,7 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import Login from '../components/auth/UserLogin.vue'
 import Register from '../components/auth/UserRegister.vue'
 import MileageReportView from '../views/MileageReportView.vue'
-import MileageEdit from '../views/MileageEdit.vue'
+import MileageUpdate from '../views/MileageUpdate.vue'
+import MileageCreate from '../views/MileageCreate.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,9 +30,14 @@ const router = createRouter({
       component: MileageReportView
     },
     {
-      path: '/mileage_edit',
-      name: 'mileage_edit',
-      component: MileageEdit
+      path: '/mileage_create',
+      name: 'mileage_create',
+      component: MileageCreate
+    },
+    {
+      path: '/mileage_update',
+      name: 'mileage_update',
+      component: MileageUpdate
     },
     {
       path: '/about',

@@ -60,5 +60,18 @@ class MileageService {
       alert('error in setNewMileage: '.error)
     }
   }
+  getLastMileageData = async () => {
+    try {
+      const url = import.meta.env.VITE_APP_API_URL + '/api/last_mileage_data/'
+      const response = await axios({
+        method: 'get',
+        url: url,
+        headers: authService.getApiHeaders()
+      })
+      return response
+    } catch (error) {
+      alert('error in setMileage: '.error)
+    }
+  }
 }
 export default new MileageService()

@@ -25,7 +25,9 @@ function logout() {
         <br>
         <RouterLink to="/register">Register</RouterLink>
         <br>
-        <RouterLink to="/mileage_edit">Edit Mileages</RouterLink>
+        <RouterLink to="/mileage_create">Create Mileage</RouterLink>
+        <br>
+        <RouterLink to="/mileage_update">Edit Mileages</RouterLink>
         <br>
         <RouterLink to="/mileage_report">Mileages Report</RouterLink>
         <br>

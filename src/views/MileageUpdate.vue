@@ -84,14 +84,6 @@ var new_mileage_data =
     "personal_travel_at_end": 0
 }
 
-// use the store here too
-var locations = ref({
-    1: "Home",
-    2: "Amazon DNN1",
-    3: "Morrisons Leisure Plaza",
-    4: "Drop off location"
-})
-
 var selected_partner = ref(null)
 var location_id_start = ref(null)
 var location_id_end = ref(null)
@@ -109,9 +101,6 @@ function store_mileage() {
         (response) => {
             if (response.status != 200) {
                 alert('unhandled error');
-            }
-            else {
-                alert('success');
             }
         })
         .catch(error => {

@@ -7,6 +7,7 @@ export const useMileageStore = defineStore('mileages', {
   state: () => ({
     mileages_report: null,
     mileage: null,
+    last_mileage_data: null
   }),
   getters: {
     getMileagesByUser(state) {
@@ -40,5 +41,6 @@ export const useMileageStore = defineStore('mileages', {
       this.mileage = null
       //also clear it from the cache
     },
+   
   },
 })
