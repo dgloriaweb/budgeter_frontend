@@ -1,7 +1,7 @@
 # Budgeter Frontend
 
 #api connection to DigitalOcean
-http://budgeterapi.talentexploitapi.co.uk/api/mileages
+https://budgeterapi.talentexploitapi.co.uk/api/mileages
 
 ### run the dev env
 npm run serve
