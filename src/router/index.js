@@ -6,10 +6,8 @@ import MileageReportView from '../views/MileageReportView.vue'
 import MileageUpdate from '../views/MileageUpdate.vue'
 import MileageCreate from '../views/MileageCreate.vue'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
+const routes = [
+  {
       path: '/',
       name: 'home',
       component: HomeView
@@ -48,6 +46,10 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     }
   ]
+  
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
 })
 
 export default router
