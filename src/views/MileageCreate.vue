@@ -13,13 +13,13 @@
         <div class="">
             <label for="opening_mileage">Opening mileage</label>
             <br>
-            <input type="text" name="opening_mileage" v-model="new_mileage_data.opening_mileage" />
+            <input type="number" name="opening_mileage" v-model="new_mileage_data.opening_mileage" />
         </div>
 
         <div class="">
             <label for="closing_mileage">Closing mileage</label>
             <br>
-            <input type="text" name="closing_mileage" v-model="new_mileage_data.closing_mileage" />
+            <input type="number" name="closing_mileage" v-model="new_mileage_data.closing_mileage" />
         </div>
         <div class="">
             <label for="selected_partner">Select a Partner</label>
