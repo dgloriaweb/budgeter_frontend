@@ -34,44 +34,44 @@
                     Comments
                 </th>
             </tr>
-            <tr v-for="mileageData in mileageStore.mileages_report" :key="mileageData">
+             <tr v-for="mileageData in mileageStore.mileages_report" :key="mileageData">
 
 
                 <td>
-                    {{ mileageData.date }}
+                    {{ mileageData?.date }}
                 </td>
                 <td>
-                    {{ mileageData.partner.partner }}
+                    {{ mileageData?.partner?.partner }}
                 </td>
                 <td>
-                    {{ mileageData.locationstart.location_name }}
+                    {{ mileageData?.locationstart?.location_name }}
                 </td>
                 <td>
-                    {{ mileageData.locationend.location_name }}
+                    {{ mileageData?.locationend?.location_name }}
                 </td>
                 <td>
-                    {{ mileageData.opening_mileage }}
+                    {{ mileageData?.opening_mileage }}
                 </td>
                 <td>
-                    {{ mileageData.personal_travel_at_start }}
+                    {{ mileageData?.personal_travel_at_start }}
                 </td>
                 <td>
-                    {{ mileageData.closing_mileage - mileageData.opening_mileage }}
+                    {{ mileageData?.closing_mileage - mileageData?.opening_mileage }}
                 </td>
                 <td>
-                    {{ mileageData.personal_travel_at_end }}
+                    {{ mileageData?.personal_travel_at_end }}
                 </td>
                 <td>
-                    {{ mileageData.closing_mileage }}
+                    {{ mileageData?.closing_mileage }}
                 </td>
                 <td>
-                    {{ mileageData.comments }}
+                    {{ mileageData?.comments }}
                 </td>
-            </tr>
+            </tr> 
 
 
         </table>
-        <!-- {{mileageStore.mileages_report}} -->
+         <!-- {{mileageStore.mileages_report}}  -->
     </div>
 </template>
 
@@ -88,6 +88,7 @@ if (store.isLoggedIn) {
     console.log('not logged in')
 }
 </script>
+
 <style>
 tr,
 td,
