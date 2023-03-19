@@ -110,6 +110,7 @@ function storeMileage() {
             else {
                 alert('success');
             }
+            store.initialiseComponents()
         })
         .catch(error => {
             if (error.response.data.errors) {
