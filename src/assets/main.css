@@ -8,6 +8,14 @@
   font-weight: normal;
 }
 
+@media(max-width:1000px) {
+
+  #app {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
+
 a,
 .green {
   text-decoration: none;

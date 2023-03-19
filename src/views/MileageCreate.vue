@@ -158,7 +158,7 @@ onMounted(() => {
 
 #setNextDay {
     font-size: 20px;
-    margin-left: 25px;
+    margin-left: 17px;
 }
 
 #date,
