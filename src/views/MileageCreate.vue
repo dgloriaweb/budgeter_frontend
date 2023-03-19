@@ -1,50 +1,50 @@
 <template>
     <div>
-        <div class="">
+        <div class="form_group_item">
             <label for="date">
                 Select Date
             </label>
             <br>
-            <input type="date" name="date" v-model="new_mileage_data.date" />
+            <input id="date" type="date" name="date" v-model="new_mileage_data.date" />
             <button v-if="new_mileage_data.date == last_mileage_data?.date" id="setNextDay" @click="setNextDay">Next day</button>
             <button v-if="new_mileage_data.date != last_mileage_data?.date" id="setToToday" @click="setToToday">Current day</button>
         </div>
 
-        <div class="">
+        <div class="form_group_item">
             <label for="opening_mileage">Opening mileage</label>
             <br>
-            <input type="number" name="opening_mileage" v-model="new_mileage_data.opening_mileage" />
+            <input id="opening_mileage" type="number" name="opening_mileage" v-model="new_mileage_data.opening_mileage" />
         </div>
 
-        <div class="">
+        <div class="form_group_item">
             <label for="closing_mileage">Closing mileage</label>
             <br>
-            <input type="number" name="closing_mileage" v-model="new_mileage_data.closing_mileage" />
+            <input id="closing_mileage" type="number" name="closing_mileage" v-model="new_mileage_data.closing_mileage" />
         </div>
-        <div class="">
+        <div class="form_group_item">
             <label for="selected_partner">Select a Partner</label>
             <br>
-            <select name="selected_partner" v-model="new_mileage_data.partner_id">
+            <select id="partner" name="selected_partner" v-model="new_mileage_data.partner_id">
                 <option v-for="(option, key) in partnerStore.partners" :value="option.id" :key="key">
                     {{ option.partner }}
                 </option>
             </select>
             <div>Selected: {{ selected_partner }}</div>
         </div>
-        <div class="">
+        <div class="form_group_item">
             <label for="selected_location_start">Select a location start</label>
             <br>
-            <select name="selected_location_start" v-model="new_mileage_data.location_id_start">
+            <select id="location_start" name="selected_location_start" v-model="new_mileage_data.location_id_start">
                 <option v-for="(option, key) in locationStore.locations" :value="option.id" :key="key">
                     {{ option.location_name }}
                 </option>
             </select>
             <div>Selected: {{ location_id_start }}</div>
         </div>
-        <div class="">
+        <div class="form_group_item">
             <label for="selected_location_end">Select a location end</label>
             <br>
-            <select name="selected_location_end" v-model="new_mileage_data.location_id_end">
+            <select id="location_end" name="selected_location_end" v-model="new_mileage_data.location_id_end">
                 <option v-for="(option, key) in locationStore.locations" :value="option.id" :key="key">
                     {{ option.location_name }}
                 </option>
@@ -150,3 +150,22 @@ onMounted(() => {
     getLastMileageData()
 })
 </script>
+
+<style>
+.form_group_item {
+    margin-top: 1rem;
+}
+
+#setNextDay {
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+#date,
+#closing_mileage,
+#partner,
+#location_end {
+    font-size: 20px;
+
+}
+</style>
