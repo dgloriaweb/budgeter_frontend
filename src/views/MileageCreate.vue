@@ -6,7 +6,6 @@
             </label>
             <br>
             <input id="date" type="date" name="date" v-model="new_mileage_data.date" />
-            <button v-if="new_mileage_data.date == last_mileage_data?.date" id="setNextDay" @click="setNextDay">Next day</button>
             <button v-if="new_mileage_data.date != last_mileage_data?.date" id="setToToday" @click="setToToday">Current day</button>
         </div>
 
@@ -120,11 +119,14 @@ function storeMileage() {
             }
         })
 }
-function setNextDay() {
-    var date = new Date(last_mileage_data.date);
-    date.setDate(date.getDate() + 1);
-    new_mileage_data.value.date = format(date, 'yyyy-MM-dd');
-}
+
+// this needs thinking about
+// function setNextDay() {
+//     var date = new Date(last_mileage_data.date);
+//     date.setDate(date.getDate() + 1);
+//     new_mileage_data.value.date = format(date, 'yyyy-MM-dd');
+// }
+
 function setToToday() {
     new_mileage_data.value.date = last_mileage_data.date;
 
@@ -157,7 +159,7 @@ onMounted(() => {
     margin-top: 1rem;
 }
 
-#setNextDay {
+#setToToday {
     font-size: 20px;
     margin-left: 17px;
 }
@@ -168,5 +170,9 @@ onMounted(() => {
 #location_end {
     font-size: 20px;
 
+}
+#opening_mileage,
+#closing_mileage{
+    max-width:100px;
 }
 </style>
