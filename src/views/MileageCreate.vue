@@ -1,6 +1,8 @@
 <template>
-    <div v-if="!store.isLoggedIn">
+    <div v-if="!mainStore.isLoggedIn">
         <p>Please login to continue</p>
+        <RouterLink to="/login">Login</RouterLink>
+
     </div>
     <div v-else>
         <div class="form_group_item">
@@ -53,15 +55,15 @@
             </select>
             <div>Selected: {{ location_id_end }}</div>
         </div>
+        <button @click="storeMileage">Create</button>
     </div>
-    <button @click="storeMileage">Create</button>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import mileageService from '@/services/mileage.service'
-import { usePartnerStore } from '@/store/partnerstore'
 import { useStore } from '@/store/index'
+import { usePartnerStore } from '@/store/partnerstore'
 import { useLocationStore } from '@/store/locationstore'
 import { useMileageStore } from '@/store/mileagestore'
 import { onMounted } from 'vue'
@@ -153,9 +155,12 @@ function getLastMileageData() {
         })
 }
 onMounted(() => {
-    partnerStore.setPartners()
-    locationStore.setLocations()
-    getLastMileageData()
+    mainStore.setLoggedInStatus()
+    if(mainStore.isLoggedIn){
+        partnerStore.setPartners()
+        locationStore.setLocations()
+        getLastMileageData()
+    }
 })
 </script>
 
