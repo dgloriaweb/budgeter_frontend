@@ -1,5 +1,8 @@
 <template>
-    <div>
+    <div v-if="!store.isLoggedIn">
+        <p>Please login to continue</p>
+    </div>
+    <div v-else>
         <div class="form_group_item">
             <label for="date">
                 Select Date
@@ -58,11 +61,13 @@
 import { ref } from 'vue';
 import mileageService from '@/services/mileage.service'
 import { usePartnerStore } from '@/store/partnerstore'
+import { useStore } from '@/store/index'
 import { useLocationStore } from '@/store/locationstore'
 import { useMileageStore } from '@/store/mileagestore'
 import { onMounted } from 'vue'
 import { format } from 'date-fns'
 
+const mainStore = useStore()
 const partnerStore = usePartnerStore()
 const locationStore = useLocationStore()
 const mileageStore = useMileageStore()
@@ -171,8 +176,9 @@ onMounted(() => {
     font-size: 20px;
 
 }
+
 #opening_mileage,
-#closing_mileage{
-    max-width:100px;
+#closing_mileage {
+    max-width: 100px;
 }
 </style>
