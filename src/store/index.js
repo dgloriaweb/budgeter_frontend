@@ -44,6 +44,8 @@ export const useStore = defineStore('main', {
       this.setUserId()
       if (this.access_token) {
         this.isLoggedIn = true
+      } else {
+        this.isLoggedIn = false
       }
     },
     setUserInLocalStore(userdata) {
