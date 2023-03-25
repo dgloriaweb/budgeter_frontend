@@ -110,24 +110,24 @@ var location_id_end = ref(null)
 function storeMileage() {
     validateMileage();
 
-    // mileageService.setNewMileage(new_mileage_data.value).then(
-    //     (response) => {
-    //         if (response.status != 200) {
-    //             alert('unhandled error');
-    //         }
-    //         else {
-    //             alert('success');
-    //         }
-    //         store.initialiseComponents()
-    //     })
-    //     .catch(error => {
-    //         if (error.response.data.errors) {
-    //             alert(error.response.data.errors);
-    //         } else {
-    //             alert('unhandled error');
-    //         }
-    //     }
-    //     )
+    mileageService.setNewMileage(new_mileage_data.value).then(
+        (response) => {
+            if (response.status != 200) {
+                alert('unhandled error');
+            }
+            else {
+                alert('success');
+            }
+            store.initialiseComponents()
+        })
+        .catch(error => {
+            if (error.response.data.errors) {
+                alert(error.response.data.errors);
+            } else {
+                alert('unhandled error');
+            }
+        }
+        )
 }
 
 function validateMileage() {
@@ -144,10 +144,15 @@ function validateMileage() {
     }
 
     //selected partner cannot be empty
-    console.log(!document.getElementById("partner").value);
     if (!document.getElementById("partner").value || document.getElementById("partner").value == "") {
         alert('partner must be set')
         document.getElementById("partner").focus()
+        return false
+    }
+    //selected end location cannot be empty
+    if (!document.getElementById("location_end").value || document.getElementById("location_end").value == "") {
+        alert('location end must be set')
+        document.getElementById("location_end").focus()
         return false
     }
 }
