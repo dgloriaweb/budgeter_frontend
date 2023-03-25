@@ -108,25 +108,49 @@ var location_id_end = ref(null)
 // }
 
 function storeMileage() {
-    mileageService.setNewMileage(new_mileage_data.value).then(
-        (response) => {
-            if (response.status != 200) {
-                alert('unhandled error');
-            }
-            else {
-                alert('success');
-            }
-            store.initialiseComponents()
-        })
-        .catch(error => {
-            if (error.response.data.errors) {
-                alert(error.response.data.errors);
-            } else {
-                alert('unhandled error');
-            }
-        })
+    validateMileage();
+
+    // mileageService.setNewMileage(new_mileage_data.value).then(
+    //     (response) => {
+    //         if (response.status != 200) {
+    //             alert('unhandled error');
+    //         }
+    //         else {
+    //             alert('success');
+    //         }
+    //         store.initialiseComponents()
+    //     })
+    //     .catch(error => {
+    //         if (error.response.data.errors) {
+    //             alert(error.response.data.errors);
+    //         } else {
+    //             alert('unhandled error');
+    //         }
+    //     }
+    //     )
 }
 
+function validateMileage() {
+    //new mileage number cannot be more than 200+ miles and cannot be less than previous mileage
+    var prevMileage = last_mileage_data.closing_mileage
+    var newMileage = new_mileage_data.value.closing_mileage
+    console.log(prevMileage);
+    console.log(newMileage);
+    if (newMileage >= prevMileage + 200 || newMileage < prevMileage) {
+        alert('new data cannot be this value')
+        new_mileage_data.value.closing_mileage = prevMileage
+        document.getElementById('closing_mileage').focus()
+        return false
+    }
+
+    //selected partner cannot be empty
+    console.log(!document.getElementById("partner").value);
+    if (!document.getElementById("partner").value || document.getElementById("partner").value == "") {
+        alert('partner must be set')
+        document.getElementById("partner").focus()
+        return false
+    }
+}
 // this needs thinking about
 // function setNextDay() {
 //     var date = new Date(last_mileage_data.date);
@@ -156,7 +180,7 @@ function getLastMileageData() {
 }
 onMounted(() => {
     mainStore.setLoggedInStatus()
-    if(mainStore.isLoggedIn){
+    if (mainStore.isLoggedIn) {
         partnerStore.setPartners()
         locationStore.setLocations()
         getLastMileageData()
