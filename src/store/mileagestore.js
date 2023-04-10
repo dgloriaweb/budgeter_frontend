@@ -9,7 +9,7 @@ export const useMileageStore = defineStore('mileages', {
     mileage: null,
     last_mileage_data: null,
     new_mileage_data: {
-      "user_id": 1,
+      "user_id": null,
       "date": "",//set this to be the last date by default
       "opening_mileage": "", // last by default
       "closing_mileage": "",
@@ -57,14 +57,33 @@ export const useMileageStore = defineStore('mileages', {
     },
 
     getLastMileageData() {
+      const store = useStore()
       mileageService
         .getLastMileageData()
         .then((response) => {
           this.last_mileage_data = response.data
-          // update data with the last values
-          this.new_mileage_data.date = this.last_mileage_data.date
-          this.new_mileage_data.opening_mileage = this.last_mileage_data.closing_mileage
-          this.new_mileage_data.location_id_start = this.last_mileage_data.location_id_end
+
+          if (response.data) {
+            // update data with the last values
+            this.new_mileage_data.date = this.last_mileage_data.date
+            this.new_mileage_data.opening_mileage = this.last_mileage_data.closing_mileage
+            this.new_mileage_data.location_id_start = this.last_mileage_data.location_id_end
+          }
+          else {
+            //no results found, this is the opening
+
+            this.new_mileage_data = {
+              "user_id": store.userId,
+              "date": new Date().toLocaleString([['sv-SE']]),
+              "opening_mileage": "",
+              "closing_mileage": "",
+              "partner_id": 6,
+              "location_id_start": 1,
+              "location_id_end": 1,
+              "personal_travel_at_start": 0,
+              "personal_travel_at_end": 0
+            }
+          }
         })
         .catch((error) => {
           console.log(error)

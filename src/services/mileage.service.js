@@ -61,8 +61,9 @@ class MileageService {
     }
   }
   getLastMileageData = async () => {
+    const store = useStore()
     try {
-      const url = import.meta.env.VITE_APP_API_URL + '/api/last_mileage_data/'
+      const url = import.meta.env.VITE_APP_API_URL + '/api/last_mileage_data/' + store.userId
       const response = await axios({
         method: 'get',
         url: url,

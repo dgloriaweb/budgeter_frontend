@@ -84,6 +84,7 @@ var isValid = false
 var selected_partner = ref(null)
 var location_id_start = ref(null)
 var location_id_end = ref(null)
+var user_id = mainStore.userId
 
 // when user changes the partner in the list, update the object
 // if (selected_partner != mileageStore.new_mileage_data.partner_id) {

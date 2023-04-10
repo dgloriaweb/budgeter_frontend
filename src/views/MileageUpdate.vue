@@ -59,9 +59,13 @@ import mileageService from '@/services/mileage.service'
 import { usePartnerStore } from '@/store/partnerstore'
 import { useLocationStore } from '@/store/locationstore'
 import { onMounted } from 'vue'
+import { useStore } from '@/store/index'
 
 const partnerStore = usePartnerStore()
 const locationStore = useLocationStore()
+const mainStore = useStore()
+
+var user_id = mainStore.userId
 
 
 /**
@@ -73,7 +77,7 @@ const locationStore = useLocationStore()
 
 var new_mileage_data =
 {
-    "user_id": 1,
+    "user_id": user_id,
     "date": "2023-02-11",//set this to be the last date by default
     "opening_mileage": "94655",
     "closing_mileage": "94658",
