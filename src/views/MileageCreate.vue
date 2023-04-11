@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!mainStore.isLoggedIn">
+    <div v-if="!store.isLoggedIn">
         <p>Please login to continue</p>
         <RouterLink to="/login">Login</RouterLink>
 
@@ -69,7 +69,7 @@ import { useMileageStore } from '@/store/mileagestore'
 import { onMounted } from 'vue'
 import { format } from 'date-fns'
 
-const mainStore = useStore()
+const store = useStore()
 const partnerStore = usePartnerStore()
 const locationStore = useLocationStore()
 const mileageStore = useMileageStore()
@@ -84,7 +84,8 @@ var isValid = false
 var selected_partner = ref(null)
 var location_id_start = ref(null)
 var location_id_end = ref(null)
-var user_id = mainStore.userId
+var user_id = store.userId
+
 
 // when user changes the partner in the list, update the object
 // if (selected_partner != mileageStore.new_mileage_data.partner_id) {
@@ -144,6 +145,7 @@ function validateMileage() {
     }
     isValid = true
     storeMileage()
+    resetPage()
 }
 // this needs thinking about
 // function setNextDay() {
@@ -157,13 +159,21 @@ function setToToday() {
 
 }
 
-onMounted(() => {
-    mainStore.setLoggedInStatus()
-    if (mainStore.isLoggedIn) {
+function resetPage() {
+    store.setLoggedInStatus()
+    if (store.isLoggedIn) {
         partnerStore.setPartners()
         locationStore.setLocations()
         mileageStore.getLastMileageData()
     }
+    mileageStore.new_mileage_data.partner_id = null
+    mileageStore.new_mileage_data.closing_mileage = null
+    mileageStore.new_mileage_data.location_id_end = null
+}
+
+
+onMounted(() => {
+    resetPage()
 })
 </script>
 
