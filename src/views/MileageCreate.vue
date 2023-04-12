@@ -120,6 +120,18 @@ function storeMileage() {
 }
 
 function validateMileage() {
+    // if the date is not current, alert the user
+    var date = new Date()
+    date.setDate(date.getDate())
+    date = format(date, 'yyyy-MM-dd')
+
+    if (mileageStore.new_mileage_data.date != date) {
+        if (confirm("The date is not today, are you sure you want to proceed?") == false) {
+            document.getElementById("date").focus()
+            return false
+        }
+    }
+
     //new mileage number cannot be more than 200+ miles and cannot be less than previous mileage
     var prevMileage = mileageStore.last_mileage_data.closing_mileage
     var newMileage = mileageStore.new_mileage_data.closing_mileage
@@ -130,7 +142,7 @@ function validateMileage() {
         return false
     }
 
-    
+
     //selected partner cannot be empty
     if (!document.getElementById("partner").value || document.getElementById("partner").value == "") {
         alert('partner must be set')

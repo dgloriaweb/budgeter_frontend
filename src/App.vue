@@ -2,7 +2,10 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { useStore } from '@/store/index'
 import { onMounted } from 'vue';
+import { useRouter } from 'vue-router'
+
 const store = useStore()
+const route = useRouter()
 
 onMounted(() => {
   store.initialiseComponents()
