@@ -62,6 +62,12 @@ nav a:first-of-type {
   border: 0;
 }
 
+@media (max-width:1024px) {
+  .hidden {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
   body {
     display: flex;
@@ -85,7 +91,6 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
     padding: 1rem 0;
     margin-top: 1rem;
   }
@@ -297,4 +302,8 @@ input::placeholder {
 
 .unset_bottom_margin {
   margin-block-end: unset;
+}
+
+.white-text {
+  color: white;
 }
