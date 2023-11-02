@@ -6,6 +6,8 @@ import Register from '../components/auth/UserRegister.vue'
 import MileageReportView from '../views/MileageReportView.vue'
 import MileageUpdate from '../views/MileageUpdate.vue'
 import MileageCreate from '../views/MileageCreate.vue'
+import MainView from '../views/MainView.vue'
+import FAQ from '../views/FAQView.vue'
 
 const routes = [
   {
@@ -54,7 +56,17 @@ const routes = [
     // this generates a separate chunk (About.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import('../views/AboutView.vue')
-  }
+  },
+  {
+    path: '/main',
+    name: 'main',
+    component: MainView
+  },
+  {
+    path: '/FAQ',
+    name: 'FAQ',
+    component: FAQ
+  },
 ]
 
 const router = createRouter({
