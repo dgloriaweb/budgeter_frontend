@@ -6,7 +6,7 @@ import Register from '../components/auth/UserRegister.vue'
 import MileageReportView from '../views/MileageReportView.vue'
 import MileageUpdate from '../views/MileageUpdate.vue'
 import MileageCreate from '../views/MileageCreate.vue'
-import MainView from '../views/MainView.vue'
+import DailyDriverView from '../views/DailyDriverView.vue'
 import FAQ from '../views/FAQView.vue'
 
 const routes = [
@@ -58,9 +58,9 @@ const routes = [
     component: () => import('../views/AboutView.vue')
   },
   {
-    path: '/main',
-    name: 'main',
-    component: MainView
+    path: '/daily_driver',
+    name: 'daily_driver',
+    component: DailyDriverView
   },
   {
     path: '/FAQ',

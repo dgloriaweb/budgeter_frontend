@@ -127,10 +127,11 @@ a,
   text-decoration: none;
   color: var(--main-green);
   transition: 0.4s;
-  padding-inline:0.2rem;
+  padding-inline: 0.2rem;
 }
 
 @media (hover: hover) {
+
   a:hover,
   .btn-nav:hover {
     background-color: var(--main-green);
@@ -292,4 +293,8 @@ input::placeholder {
 .support-plea {
   border-inline: 12px solid var(--main-green);
   padding-inline: 1rem;
+}
+
+.unset_bottom_margin {
+  margin-block-end: unset;
 }
