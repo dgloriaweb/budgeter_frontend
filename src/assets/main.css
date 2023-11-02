@@ -62,6 +62,11 @@ nav a:first-of-type {
   border: 0;
 }
 
+/* active link design */
+.router-link-exact-active {
+  background-color: white;
+}
+
 @media (max-width:1024px) {
   .hidden {
     display: none;
@@ -87,6 +92,7 @@ nav a:first-of-type {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
+    width: 100%;
   }
 
   nav {
