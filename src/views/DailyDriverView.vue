@@ -1,5 +1,5 @@
 <template>
-    <div class="main" v-if="store.isLoggedIn">
+    <div class="main_mobile" v-if="store.isLoggedIn">
         <h1>Daily Earnings</h1>
         <div>
             <div class="container container1">

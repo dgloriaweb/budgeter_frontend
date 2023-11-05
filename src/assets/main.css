@@ -18,6 +18,7 @@ body {
 header {
   line-height: 1.5;
   max-height: 100vh;
+  background-color: #333;
 }
 
 @media (max-width:1023px) {
@@ -30,12 +31,6 @@ header {
   nav {
     line-height: 2rem;
     display: flex
-  }
-
-  .btn-nav {
-    border-left: 1px solid #ccc;
-    padding: 0 1rem;
-    font-size: 12px;
   }
 
   #app {
@@ -139,6 +134,16 @@ a,
   color: var(--main-green);
   transition: 0.4s;
   padding-inline: 0.2rem;
+  padding-block: 0.4rem;
+  margin-block: 0.4rem;
+}
+
+@media (max-width:1023px) {
+  .btn-nav {
+    border-left: 1px solid #ccc;
+    padding: 0 1rem;
+    font-size: 12px;
+  }
 }
 
 @media (hover: hover) {
@@ -166,6 +171,7 @@ a,
   color: white;
 }
 
+.btn-primary,
 .btn-success {
   background-color: var(--main-green);
   color: white;
@@ -176,6 +182,7 @@ a,
   background-color: #d32f2f;
   color: white;
 }
+
 
 h1,
 h2,
@@ -190,7 +197,7 @@ h4 {
   gap: 0.5rem;
 }
 
-.main {
+.main_mobile {
   max-width: 320px;
   margin: auto auto;
 }

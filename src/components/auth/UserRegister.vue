@@ -31,7 +31,7 @@
       />
     </div>
     <div class="form_group">
-      <button class="btn btn_primary" @click="validate">Sign Up</button>
+      <button class="btn btn-primary" @click="validate">Sign Up</button>
       </div>
   </div>
 </template>

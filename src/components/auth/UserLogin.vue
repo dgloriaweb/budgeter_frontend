@@ -1,22 +1,23 @@
 <template>
   <div class="wrapper">
-    <div class="form_group">
+    <div class="form-group">
       <label for="email">Email</label>
       <br />
-      <input name="email" type="email" class="form_control" v-model="email" focus/>
+      <input name="email" type="email" class="form-control" v-model="email" placeholder="email" focus/>
     </div>
-    <div class="form_group">
+    <div class="form-group">
       <label for="password">Password</label>
       <br />
       <input
         name="password"
         type="password"
-        class="form_control"
+        class="form-control"
         v-model="password"
+        placeholder="password"
       />
     </div>
-    <div class="form_group">
-      <button class="btn btn_primary" @click="handleLogin">Login</button>
+    <div class="form-group">
+      <div class="btn btn-success" @click="handleLogin">Login</div>
       <br />
       <br />
       <router-link :to="{ name: 'register' }" class="">

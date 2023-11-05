@@ -5,7 +5,7 @@
     </i>
     <div class="details">
       <h3>
-        Brrrrrrrrrrrr
+        TODO- replace
         <slot name="heading"></slot>
       </h3>
       <slot></slot>

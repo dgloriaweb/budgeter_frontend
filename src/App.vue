@@ -30,7 +30,7 @@ function logout() {
         <RouterLink to="/mileage_update" class="btn btn-nav">Edit Mileages</RouterLink>
         <RouterLink to="/mileage_report" class="btn btn-nav">Mileages Report</RouterLink>
         <p class="unset_bottom_margin white-text hidden">Daily Driver Register</p>
-        <RouterLink to="/daily_driver" class="btn btn-nav">Daily Driver</RouterLink>
+        <RouterLink to="/daily_driver" class="btn btn-nav">Daily Driver For Mobile</RouterLink>
         <RouterLink to="/FAQ" class="btn btn-nav">FAQ</RouterLink>
         <div @click="logout" v-if="store.isLoggedIn" class="btn btn-nav">
           Logout
@@ -39,5 +39,7 @@ function logout() {
     </div>
   </header>
 
-  <RouterView />
+  <div class="main">
+    <RouterView />
+  </div>
 </template>
