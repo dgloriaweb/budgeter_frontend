@@ -3,13 +3,14 @@
     <div class="form-group">
       <label for="email">Email</label>
       <br />
-      <input name="email" type="email" class="form-control" v-model="email" placeholder="email" focus/>
+      <input name="email" id="email" type="email" class="form-control" v-model="email" placeholder="email" focus/>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
       <br />
       <input
         name="password"
+        id="password"
         type="password"
         class="form-control"
         v-model="password"

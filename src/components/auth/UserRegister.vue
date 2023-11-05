@@ -1,16 +1,16 @@
 <template>
   <div class="wrapper">
-    <div class="form_group">
+    <div class="form-group">
       <label for="name">Name</label>
       <br />
       <input name="name" type="text" class="form_control" v-model="name" />
     </div>
-    <div class="form_group">
+    <div class="form-group">
       <label for="email">Email</label>
       <br />
       <input name="email" type="email" class="form_control" v-model="email" />
     </div>
-    <div class="form_group">
+    <div class="form-group">
       <label for="password">Password</label>
       <br />
       <input
@@ -20,7 +20,7 @@
         v-model="password"
       />
     </div>
-    <div class="form_group">
+    <div class="form-group">
       <label for="password_confirmation">Confirm Password</label>
       <br />
       <input
@@ -30,7 +30,7 @@
         class="form_control"
       />
     </div>
-    <div class="form_group">
+    <div class="form-group">
       <button class="btn btn-primary" @click="validate">Sign Up</button>
       </div>
   </div>
