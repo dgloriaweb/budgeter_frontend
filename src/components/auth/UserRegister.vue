@@ -3,7 +3,7 @@
     <div class="form-group">
       <label for="name">Name</label>
       <br />
-      <input name="name" type="text" class="form_control" v-model="name" />
+      <input name="name" type="text" class="form_control" v-model="name"/>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
@@ -31,7 +31,7 @@
       />
     </div>
     <div class="form-group">
-      <button class="btn btn-primary" @click="validate">Sign Up</button>
+      <div class="btn btn-success" @click="validate">Sign Up</div>
       </div>
   </div>
 </template>
@@ -44,10 +44,10 @@ import { ref, onMounted } from 'vue'
 
 
 // data
-var name = ref(null)
-var email = ref(null)
-var password = ref(null)
-var password_confirmation = ref(null)
+var name = ref("dgloria")
+var email = ref("dgloria2.web@gmail.com")
+var password = ref("p@X9eT&7KvDD")
+var password_confirmation = ref("p@X9eT&7KvDD")
 const store = useStore()
 const route = useRouter()
 

@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 :root {
-  --main-green: #0d8172;
+  --main-green: #2b7f7e;
   --light-gray: #3333334d;
   --dark-gray: #333333;
   --purple: #b5a2ff;
+  --dark-purple: #3400ff;
+  --danger: #cf3360;
+  --orange-candy: #ffa360;
 }
 
 body {
@@ -16,6 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+  color: var(--dark-gray);
 }
 
 
@@ -50,8 +54,10 @@ header {
 
 
 /* active link design */
-.router-link-exact-active {
+.router-link-exact-active,
+.router-link-active {
   background-color: white;
+  color: var(--dark-purple) !important;
 }
 
 nav {
@@ -84,6 +90,7 @@ nav a:first-of-type {
     width: 84%;
 
   }
+
   header {
     width: 235px;
   }
@@ -146,8 +153,8 @@ a,
 
   a:hover,
   .btn-nav:hover {
-    background-color: var(--main-green);
-    color: white
+    background-color: var(--purple);
+    color: white !important
   }
 }
 
@@ -175,7 +182,7 @@ a,
 }
 
 .btn-danger {
-  background-color: #d32f2f;
+  background-color: var(--danger);
   color: white;
 }
 
@@ -191,6 +198,7 @@ h1.hero {
   color: var(--purple);
 
 }
+
 .container1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -243,7 +251,7 @@ h1.hero {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #ff6c00;
+  background: var(--orange-candy);
 }
 
 .swiperoverlay.animated {
@@ -251,7 +259,7 @@ h1.hero {
 }
 
 .swiperoverlay>p {
-  color: #fff;
+  color: var(--dark-gray);
   font-weight: bold;
   text-align: center;
   overflow: hidden;
