@@ -8,6 +8,7 @@ import MileageUpdate from '../views/MileageUpdate.vue'
 import MileageCreate from '../views/MileageCreate.vue'
 import DailyDriverView from '../views/DailyDriverView.vue'
 import FAQ from '../views/FAQView.vue'
+import LooFinder from '../views/LooFinder.vue'
 
 const routes = [
   {
@@ -66,6 +67,11 @@ const routes = [
     path: '/FAQ',
     name: 'FAQ',
     component: FAQ
+  },
+  {
+    path: '/loofinder',
+    name: 'loofinder',
+    component: LooFinder
   },
 ]
 

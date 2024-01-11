@@ -31,6 +31,7 @@ function logout() {
         <RouterLink v-if="store.isLoggedIn" to="/mileage_update" class="btn btn-nav">Edit Mileages</RouterLink>
         <RouterLink v-if="store.isLoggedIn" to="/mileage_report" class="btn btn-nav">Mileages Report</RouterLink>
         <p v-if="store.isLoggedIn" class="unset_bottom_margin white-text hidden">Daily Driver Register</p>
+        <RouterLink  to="/loofinder" class="btn btn-nav">Loo Finder</RouterLink>
         <RouterLink v-if="store.isLoggedIn" to="/daily_driver" class="btn btn-nav">Daily Driver For Mobile</RouterLink>
         <RouterLink to="/FAQ" class="btn btn-nav"><i class="fas fa-question-circle"></i> FAQ</RouterLink>
         <div @click="logout" v-if="store.isLoggedIn" class="btn btn-nav">
